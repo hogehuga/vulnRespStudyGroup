@@ -108,4 +108,8 @@ LogFormatの変更は、稼動状態のシステムへは難しい場合があ�
   - 悪意のあるルールの場合、 `ua.random()` などで無作為に選択されていることが多い。
   - UserAgent自体は、Windows10の64bit(Windows NT 10.0; Win64; x64)上で稼働する Chrome/63の可能性が高いようだ。
 
+User-Agentについて
+
+- https://qiita.com/nightyknite/items/b2590a69f2e0135756dc
+
 # ログを見ていく
