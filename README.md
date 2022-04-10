@@ -1,20 +1,42 @@
 # 概要
 
-脆弱性対応研究会の資料を配置します。
+facebook上のグループ "脆弱性対応研究会" の資料を配置ししています。
 
-- [logAnalysis](https://github.com/hogehuga/vulnRespStudyGroup/tree/master/logAnalysis)
-  - ログ分析（初歩）の勉強会で利用したテキストです。
-  - 大幅に、作成中です。
-- [Non-FunctionalRequirementsGradesUsageGuide](https://github.com/hogehuga/vulnRespStudyGroup/tree/master/Non-FunctionalRequirementsGradesUsageGuide)
-  - IPAの非機能要求グレード2018について勉強会をする際に利用するテキストです。
-  - 各要点をまとめていくので、非機能として何を検討しなければいけないか、ということを考える際に利用できると思います。
 
 # 目的
 
 オープンなコンピュータセキュリティの勉強会をしたく、**脆弱性対応研究会** というグループを作りました。
+**脆弱性対応研究会** の成果発表等の体裁で、 **脆弱性対応勉強会** を開催しています。
+
 - [脆弱性対応研究会](https://www.facebook.com/groups/zeijyakuseitaioukenkyukai/)
 - [脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/)
   - 研究会主催の勉強会なので、脆弱性対応勉強会、です。
+  - Twitterハッシュタグ "#vulnstudy" を利用しています。
+  - 同勉強会の告知として [connpassのグループ](https://zeijyakuseitaioukenkyukai.connpass.com/) を利用しています。
+
+取り扱う範囲は、セキュリティ全般になります。
+
+- 脆弱性それ自体の理解や、対応方法について
+- マルウェアでの攻撃やそれの検知、防ぎ方について
+- セキュリティに関連する情報の取り扱い（OSINT等含む）について
+- etc
+
+## 配置 
+
+用途ごとにディレクトリを切っています。
+
+- document
+  - 脆弱性対応研究会/勉強会に関するドキュメント
+  - 汎用的に使える情報、等（を置く予定）
+- report
+  - 時折作成する、IPA等のレポートを確認したサマリなどを配置
+- studySession
+  - 勉強会で利用した資料等を配置
+- x-in-preparation
+  - 準備中のコンテンツ
+    - 次回実施の資料とか計画とかを配置
+    - 長期計画の場合、可能ならここで議論結果を更新する
+  - ディレクトリ一覧の最後にする/実験的な意味合いなので "x-" を付けた
 
 # その他
 
@@ -37,23 +59,27 @@
 
 基本的には関東で開催する現地開催の勉強会
 
-- 2018/12/08 第0回 脆弱性対応勉強会
-- 2019/01/26 第1回 脆弱性対応勉強会
-- 2019/03/30 第2回 脆弱性対応勉強会（勝手にIPAテクニカルウオッチ ハンズオン）
-- 2019/04/20 第3回 脆弱性対応勉強会
-- 2019/06/01 第4回 脆弱性対応勉強会（ログ分析の初歩：ハンズオン）
-- 2019/06/29 第5回 脆弱性対応勉強会（ログ管理と分析の初歩）
-- 2019/08/24 第6回 脆弱性対応勉強会（日機能要求グレード2018読合せ）
-- 2019/11/23 第7回 脆弱性対応勉強会（実験会：AppGoat体験会）
-- 2020/01/11 第8回 脆弱性対応勉強会（WordPress Pluginの脆弱性ハンズオン）
-- 2020/07/31 第9回 脆弱性対応勉強会（脆弱性管理製品を知る）
+- 2018/12/08 [第0回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/109946/)
+- 2019/01/26 [第1回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/113847/)
+- 2019/03/30 [第2回 脆弱性対応勉強会（勝手にIPAテクニカルウオッチ ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/123143/)
+- 2019/04/20 [第3回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/127635/)
+- 2019/06/01 [第4回 脆弱性対応勉強会（ログ分析の初歩：ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/131007/)
+- 2019/06/29 [第5回 脆弱性対応勉強会（ログ管理と分析の初歩）](https://zeijyakuseitaioukenkyukai.connpass.com/event/137131/)
+- 2019/08/24 [第6回 脆弱性対応勉強会（日機能要求グレード2018読合せ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/141424/)
+- 2019/11/23 [第7回 脆弱性対応勉強会（実験会：AppGoat体験会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/156511/)
+- 2020/01/11 [第8回 脆弱性対応勉強会（WordPress Pluginの脆弱性ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/160949/)
+- 2020/07/31 [第9回 脆弱性対応勉強会（脆弱性管理製品を知る）](https://zeijyakuseitaioukenkyukai.connpass.com/event/182959/)
 
 ## Expansion
 
 スピーカーをお呼びして、お話をして頂く勉強会
 
-- 2020/09/18 脆弱性対応勉強会Expansion 第01回（脆弱性診断研究会）
-- 2021/02/22 脆弱性対応勉強会Expansion 第01回（脆弱性診断研究会）
-- 2021/09/24 脆弱性対応勉強会Expansion 第01回（脆弱性診断研究会）
-- 2021/10/22 脆弱性対応勉強会Expansion 第01回（アジャイルセキュリティ）
-- 2021/11/19 脆弱性対応勉強会Expansion 第01回（OWASP ZAP&EC-CUBE）
+- 2020/09/18 [脆弱性対応勉強会Expansion 第01回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/187890/)
+- 2021/02/22 [脆弱性対応勉強会Expansion 第02回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/203607/)
+- 2021/09/24 [脆弱性対応勉強会Expansion 第03回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/224525/)
+- 2021/10/22 [脆弱性対応勉強会Expansion 第04回（アジャイルセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/226862/)
+- 2021/11/19 [脆弱性対応勉強会Expansion 第05回（OWASP ZAP&EC-CUBE）](https://zeijyakuseitaioukenkyukai.connpass.com/event/229038/)
+
+## 出張版
+
+- 2022/04/01 [脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/)
