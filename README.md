@@ -2,6 +2,12 @@
 
 facebook上のグループ "脆弱性対応研究会" の資料を配置ししています。
 
+# 新着情報
+
+- 2022/12/07
+  - githubに色々置いていたこと/更新していない事、を思い出しました!
+  - 本README.mdの、開催履歴を更新しました
+  - studySession/vulsStudy10 に 第10回の勉強会資料を配置しました。
 
 # 目的
 
@@ -59,16 +65,17 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 
 基本的には関東で開催する現地開催の勉強会
 
-- 2018/12/08 [第0回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/109946/)
-- 2019/01/26 [第1回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/113847/)
-- 2019/03/30 [第2回 脆弱性対応勉強会（勝手にIPAテクニカルウオッチ ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/123143/)
-- 2019/04/20 [第3回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/127635/)
-- 2019/06/01 [第4回 脆弱性対応勉強会（ログ分析の初歩：ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/131007/)
-- 2019/06/29 [第5回 脆弱性対応勉強会（ログ管理と分析の初歩）](https://zeijyakuseitaioukenkyukai.connpass.com/event/137131/)
-- 2019/08/24 [第6回 脆弱性対応勉強会（日機能要求グレード2018読合せ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/141424/)
-- 2019/11/23 [第7回 脆弱性対応勉強会（実験会：AppGoat体験会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/156511/)
-- 2020/01/11 [第8回 脆弱性対応勉強会（WordPress Pluginの脆弱性ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/160949/)
-- 2020/07/31 [第9回 脆弱性対応勉強会（脆弱性管理製品を知る）](https://zeijyakuseitaioukenkyukai.connpass.com/event/182959/)
+- 2018/12/08 [第00回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/109946/)
+- 2019/01/26 [第01回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/113847/)
+- 2019/03/30 [第02回 脆弱性対応勉強会（勝手にIPAテクニカルウオッチ ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/123143/)
+- 2019/04/20 [第03回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/127635/)
+- 2019/06/01 [第04回 脆弱性対応勉強会（ログ分析の初歩：ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/131007/)
+- 2019/06/29 [第05回 脆弱性対応勉強会（ログ管理と分析の初歩）](https://zeijyakuseitaioukenkyukai.connpass.com/event/137131/)
+- 2019/08/24 [第06回 脆弱性対応勉強会（日機能要求グレード2018読合せ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/141424/)
+- 2019/11/23 [第07回 脆弱性対応勉強会（実験会：AppGoat体験会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/156511/)
+- 2020/01/11 [第08回 脆弱性対応勉強会（WordPress Pluginの脆弱性ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/160949/)
+- 2020/07/31 [第09回 脆弱性対応勉強会（脆弱性管理製品を知る）](https://zeijyakuseitaioukenkyukai.connpass.com/event/182959/)
+- 2022/12/03 [第10回 脆弱性対応勉強会（X.1060の概要と使い所）](https://zeijyakuseitaioukenkyukai.connpass.com/event/266469/)
 
 ## Expansion
 
@@ -79,7 +86,11 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - 2021/09/24 [脆弱性対応勉強会Expansion 第03回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/224525/)
 - 2021/10/22 [脆弱性対応勉強会Expansion 第04回（アジャイルセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/226862/)
 - 2021/11/19 [脆弱性対応勉強会Expansion 第05回（OWASP ZAP&EC-CUBE）](https://zeijyakuseitaioukenkyukai.connpass.com/event/229038/)
+- 2022/09/20 [脆弱性対応勉強会Expansion 第06回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/254807/)
 
 ## 出張版
 
-- 2022/04/01 [脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/)
+関東以外で開催する現地開催の勉強会
+
+- 2022/04/01 [脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/event/242948/)
+- 2022/07/08 [脆弱性対応勉強会 #02（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/253265/)
