@@ -27,6 +27,35 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - セキュリティに関連する情報の取り扱い（OSINT等含む）について
 - etc
 
+## 参加ルール
+
+チャタムハウスルール、TLP2.0を適用します。
+- 参加者に関しては、チャタムハウスルールに従う
+  - 登壇者に関しては、登壇者の意向に従う（所属の公開可否等）
+- TLPは、基本的にTLP2.0の TLP:CLEAR(共有範囲:全世界が対象) とし、登壇者等が意図的に制限する場合はそれに従う
+
+### チャタムハウスルール
+
+概要は以下の通りです。
+- 会議において、以下を守りましょう
+  - 参加者は会議中に得た情報を自由に使用できる
+  - 但し、以下を守ること
+    - 情報発信者や所属を特定する事をしない
+    - 他の参加者を特定する
+
+
+詳細は以下を確認ください。
+- 日本シーサート協議会の[チャタムハウスルール（Chatham House Rule）](https://www.nca.gr.jp/activity/#:~:text=%E3%83%81%E3%83%A3%E3%82%BF%E3%83%A0%E3%83%8F%E3%82%A6%E3%82%B9%E3%83%AB%E3%83%BC%E3%83%AB%E3%81%A8%E3%81%AF,%E3%83%AB%E3%83%BC%E3%83%AB%E3%81%A8%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82) を参照
+- 本勉強会での追加事項である「登壇者の例外」については、登壇者が認める範囲で公開可能
+
+### TLP 2.0
+
+基本的に TLP:CLEAR 相当とし、登壇者等により意図的に公開範囲が支持された場合は、それに従ってください。
+
+詳細は以下の通り
+- 原文としては FIRSTの[FIRST StandardsDefinitions and Usage Guidance -Version2.0日本語版](https://www.first.org/tlp/docs/v2/tlp-v2_ja.pdf)を参照してください
+- 分かりやすい解説としては、JPCERT/CCのblog [TLP v2の日本語版が公開されました](https://blogs.jpcert.or.jp/ja/2022/09/tlp-v2.html)を参照してください
+
 ## 配置 
 
 用途ごとにディレクトリを切っています。
@@ -43,6 +72,21 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
     - 次回実施の資料とか計画とかを配置
     - 長期計画の場合、可能ならここで議論結果を更新する
   - ディレクトリ一覧の最後にする/実験的な意味合いなので "x-" を付けた
+- releasenote.md
+  - 更新履歴的な何か
+- README.md
+  - 本テキスト
+
+## 僕らは怪しくない！
+
+出張版脆弱性対応勉強会において、おまえ誰よ？怪しくないの？壺を買わせる気では！、のような心配があるかもしれません。
+一応、まともな勉強会（但し独り実施）であるため、それを示すエビデンスを提示します。
+
+- Qiita [サイバーセキュリティの草の根コミュニティ系勉強会](https://qiita.com/sonodam/items/2b3add928a7d1ae0f657)
+  - 作成者は sonodam さんで、「全国」扱いになっています…
+- NISC [2023年サイバーセキュリティ月間の関連行事](https://security-portal.nisc.go.jp/cybersecuritymonth/2023/events/index.html#tokyo)
+  - 2023/03/04実施回が登録されています
+  - 同2023/02/24のVuls祭りの運営もしています
 
 # その他
 
@@ -76,6 +120,7 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - 2020/01/11 [第08回 脆弱性対応勉強会（WordPress Pluginの脆弱性ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/160949/)
 - 2020/07/31 [第09回 脆弱性対応勉強会（脆弱性管理製品を知る）](https://zeijyakuseitaioukenkyukai.connpass.com/event/182959/)
 - 2022/12/03 [第10回 脆弱性対応勉強会（X.1060の概要と使い所）](https://zeijyakuseitaioukenkyukai.connpass.com/event/266469/)
+- 2023/03/04 [第11回 脆弱性対応勉強会（X.1060で考えるサイバーセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/269837/)
 
 ## Expansion
 
@@ -94,3 +139,4 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 
 - 2022/04/01 [脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/event/242948/)
 - 2022/07/08 [脆弱性対応勉強会 #02（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/253265/)
+- 2023/03/15 [脆弱性対応勉強会 #03（長崎）](https://zeijyakuseitaioukenkyukai.connpass.com/event/275421/)
