@@ -140,3 +140,4 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - 2022/04/01 [脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/event/242948/)
 - 2022/07/08 [脆弱性対応勉強会 #02（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/253265/)
 - 2023/03/15 [脆弱性対応勉強会 #03（長崎）](https://zeijyakuseitaioukenkyukai.connpass.com/event/275421/)
+- 2023/06/01 [脆弱性対応勉強会 #04（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/285245/)
