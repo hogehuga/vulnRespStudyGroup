@@ -4,7 +4,7 @@ Qiitaでまとめていた、学生向けセキュリティイベントカレン
 詳細はQiitaを参照してください。
 
 - https://qiita.com/hogehuga/items/df600f55a8bd2bbad4a9
-- この項目以外は、Qiitaのコピペです(2023/07/31時点)
+- この項目以外は、Qiitaのコピペです(2023/09/27時点)
   
 ## イベントカレンダー
 
@@ -29,8 +29,9 @@ Qiitaでまとめていた、学生向けセキュリティイベントカレン
 |08/21-22|JNSA セキュチャレ・基礎編 第1回|https://e-ve.event-form.jp/event/57448/T1wTaDGNig|
 |08/29|COMPASS5.0サマースクール Aコース|https://www.kisarazu.ac.jp/k-sec/summerschool2023|
 |2023/09|---|---|
-|09/03|SECCON Biginners Live||
+|09/03|SECCON Biginners Live|https://connpass.com/event/290912/|
 |09/07-08|COMPASS5.0サマースクール Bコース|https://www.kisarazu.ac.jp/k-sec/summerschool2023|
+|09/09|SECCON Beginners 2023 札幌|https://www.seccon.jp/2023/seccon_beginners/seccon_beginners_2023.html|
 |09/10|セキュリティ・ミニキャンプ in 新潟 2023 専門講座|https://www.ipa.go.jp/jinzai/security-camp/2023/minicamp.html|
 |09/12-19|NEC Security Skills Challenge for Students|https://www.kisarazu.ac.jp/サイバーセキュリティ人材育成事業/「nec-security-skills-challenge-for-students」を開催します！/|
 |09/16-17(仮)|SECCON CTF 2023 Quals(SECCON CTF 2023予選)||
@@ -40,7 +41,8 @@ Qiitaでまとめていた、学生向けセキュリティイベントカレン
 |2023/10|---|---|
 |10/01|高知高専micro:bitプログラミング入門|https://www.kochi-ct.ac.jp/event/archives/220|
 |10月頃|SECCONワークショップ;TBD||
-|2023/12|---|---|
+|2023/11|---|---|
+|12/02|セキュリティ・ミニキャンプin石川2023|https://www.security-camp.or.jp/minicamp/ishikawa2023.html|
 |12/23|CTF for GIRLS10周年目記念イベント||
 |12/23-24|SECCONワークショップ;TBD||
 |12/23-24(仮)|SECCON CTF 2023 Finals(SECCON 2023 CTF決勝戦)||
@@ -64,7 +66,7 @@ Qiitaでまとめていた、学生向けセキュリティイベントカレン
 |Cisco|サイバーセキュリティ スカラシップ プログラム|https://www.cisco.com/c/m/ja_jp/about/security-scholarship.html|イベントではないので、カレンダー記載せず|
 |KSEC|トップページ|https://k-sec.kochi-ct.ac.jp/index.html|TOPICS&NEWS 辺りから確認が必要か|
 |木更津工業高等専門学校(K-SEC)|サイバーセキュリティ人材育成事業(K-SEC)|https://www.kisarazu.ac.jp/k-sec|
-
+|セキュリティ・キャンプ|ニュース欄参照|https://www.security-camp.or.jp/||
 
 追加があれば指摘ください。
 
