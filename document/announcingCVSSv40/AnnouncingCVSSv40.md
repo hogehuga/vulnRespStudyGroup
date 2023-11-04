@@ -6,13 +6,11 @@ header: .
 footer: Copyright (c)2023 by 脆弱性対応勉強会　原文：https://www.first.org/cvss/v4-0/cvss-v40-presentation.pdf の意訳です
 ---
 
----
-
 <!-- _class: title -->
 
 # Announcing CVSS v4.0 の意訳
-Dave Dugal(Juniper Networks, USA)
-Dale Rich(Black & Veatch, USA)
+
+意訳：脆弱性対応研究会
 
 ---
 
