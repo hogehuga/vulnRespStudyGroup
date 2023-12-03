@@ -109,10 +109,10 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 
 基本的には関東で開催する現地開催の勉強会
 
-- 2018/12/08 [第00回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/109946/)
-- 2019/01/26 [第01回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/113847/)
+- 2018/12/08 [第00回 脆弱性対応勉強会（脆弱性対応について体験しよう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/109946/)
+- 2019/01/26 [第01回 脆弱性対応勉強会（脆弱性対応について体験しよう/再）](https://zeijyakuseitaioukenkyukai.connpass.com/event/113847/)
 - 2019/03/30 [第02回 脆弱性対応勉強会（勝手にIPAテクニカルウオッチ ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/123143/)
-- 2019/04/20 [第03回 脆弱性対応勉強会](https://zeijyakuseitaioukenkyukai.connpass.com/event/127635/)
+- 2019/04/20 [第03回 脆弱性対応勉強会（IPAの「中小企業の情報セキュリティ対策ガイドライン第3版」を読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/127635/)
 - 2019/06/01 [第04回 脆弱性対応勉強会（ログ分析の初歩：ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/131007/)
 - 2019/06/29 [第05回 脆弱性対応勉強会（ログ管理と分析の初歩）](https://zeijyakuseitaioukenkyukai.connpass.com/event/137131/)
 - 2019/08/24 [第06回 脆弱性対応勉強会（日機能要求グレード2018読合せ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/141424/)
