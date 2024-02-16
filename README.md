@@ -82,11 +82,14 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 出張版脆弱性対応勉強会において、おまえ誰よ？怪しくないの？壺を買わせる気では！、のような心配があるかもしれません。
 一応、まともな勉強会（但し独り実施）であるため、それを示すエビデンスを提示します。
 
-- Qiita [サイバーセキュリティの草の根コミュニティ系勉強会](https://qiita.com/sonodam/items/2b3add928a7d1ae0f657)
+- Qiita
+  - [サイバーセキュリティの草の根コミュニティ系勉強会](https://qiita.com/sonodam/items/2b3add928a7d1ae0f657)
   - 作成者は sonodam さんで、「全国」扱いになっています…
-- NISC [2023年サイバーセキュリティ月間の関連行事](https://security-portal.nisc.go.jp/cybersecuritymonth/2023/events/index.html#tokyo)
-  - 2023/03/04実施回が登録されています
-  - 同2023/02/24のVuls祭りの運営もしています
+- NISC
+  - [2023年サイバーセキュリティ月間の関連行事](https://security-portal.nisc.go.jp/cybersecuritymonth/2023/events/index.html#tokyo)
+  - [2024年サイバーセキュリティ月間の関連行事](https://security-portal.nisc.go.jp/cybersecuritymonth/2024/events/index.html)
+    - 「脆弱性対応研究会（H/N: hogehuga）」という、なぜか私だけハンドルネームが公開されている事態に…
+
 
 # その他
 
@@ -133,12 +136,14 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - 2021/10/22 [脆弱性対応勉強会Expansion 第04回（アジャイルセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/226862/)
 - 2021/11/19 [脆弱性対応勉強会Expansion 第05回（OWASP ZAP&EC-CUBE）](https://zeijyakuseitaioukenkyukai.connpass.com/event/229038/)
 - 2022/09/20 [脆弱性対応勉強会Expansion 第06回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/254807/)
+- 2022/01/18 [脆弱性対応勉強会Expansion 第07回（VDPを学ぶ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/305932/)
 
 ## 出張版
 
 関東以外で開催する現地開催の勉強会
 
-- 2022/04/01 [脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/event/242948/)
-- 2022/07/08 [脆弱性対応勉強会 #02（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/253265/)
-- 2023/03/15 [脆弱性対応勉強会 #03（長崎）](https://zeijyakuseitaioukenkyukai.connpass.com/event/275421/)
-- 2023/06/01 [脆弱性対応勉強会 #04（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/285245/)
+- 2022/04/01 [出張版 脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/event/242948/)
+- 2022/07/08 [出張版 脆弱性対応勉強会 #02（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/253265/)
+- 2023/03/15 [出張版 脆弱性対応勉強会 #03（長崎）](https://zeijyakuseitaioukenkyukai.connpass.com/event/275421/)
+- 2023/06/01 [出張版 脆弱性対応勉強会 #04（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/285245/)
+- 2024/02/09 [出張版 脆弱性対応勉強会 #05（名古屋）](https://zeijyakuseitaioukenkyukai.connpass.com/event/306261/)
