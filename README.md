@@ -2,16 +2,9 @@
 
 facebook上のグループ "脆弱性対応研究会" の資料を配置ししています。
 
-# 新着情報
-
-- 2022/12/07
-  - githubに色々置いていたこと/更新していない事、を思い出しました!
-  - 本README.mdの、開催履歴を更新しました
-  - studySession/vulsStudy10 に 第10回の勉強会資料を配置しました。
-
 # 目的
 
-オープンなコンピュータセキュリティの勉強会をしたく、**脆弱性対応研究会** というグループを作りました。
+オープンなサイバーセキュリティの勉強会をしたく、**脆弱性対応研究会** というグループを作りました。
 **脆弱性対応研究会** の成果発表等の体裁で、 **脆弱性対応勉強会** を開催しています。
 
 - [脆弱性対応研究会](https://www.facebook.com/groups/zeijyakuseitaioukenkyukai/)
@@ -79,7 +72,7 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - README.md
   - 本テキスト
 
-## 僕らは怪しくない！
+## 僕ら（"ら"？）は怪しくない！
 
 出張版脆弱性対応勉強会において、おまえ誰よ？怪しくないの？壺を買わせる気では！、のような心配があるかもしれません。
 一応、まともな勉強会（但し独り実施）であるため、それを示すエビデンスを提示します。
@@ -90,7 +83,6 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - NISC
   - [2023年サイバーセキュリティ月間の関連行事](https://security-portal.nisc.go.jp/cybersecuritymonth/2023/events/index.html#tokyo)
   - [2024年サイバーセキュリティ月間の関連行事](https://security-portal.nisc.go.jp/cybersecuritymonth/2024/events/index.html)
-    - 「脆弱性対応研究会（H/N: hogehuga）」という、なぜか私だけハンドルネームが公開されている事態に…
 
 
 # その他
@@ -127,6 +119,7 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - 2022/12/03 [第10回 脆弱性対応勉強会（X.1060の概要と使い所）](https://zeijyakuseitaioukenkyukai.connpass.com/event/266469/)
 - 2023/03/04 [第11回 脆弱性対応勉強会（X.1060で考えるサイバーセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/269837/)
 - 2023/09/02 [第12回 脆弱性対応勉強会（政策研究大学院大学のインシデント報告書を読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/294430/)
+- 2024/03/23 [第13回 脆弱性対応勉強会（NTT西日本の顧客情報不正持出しのレポートを読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/312278/)
 
 ## Expansion
 
