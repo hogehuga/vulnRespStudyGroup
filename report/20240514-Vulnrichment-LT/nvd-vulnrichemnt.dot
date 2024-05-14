@@ -1,0 +1,10 @@
+digraph usage {
+    node[shape=box];
+    NVD [label="NIST\nNVD"];
+    Vulnrichment [label="CISA\nVulnrichment"];
+    User;
+
+    NVD -> User [label="CVE-ID\nCVSS Score,\nVector,CPE,\netc"];
+    NVD -> Vulnrichment [label="get NVD data"];
+    Vulnrichment -> User [label="enrichment\nNVD's data\n(SSVC,CWE,CPE)"];
+}
