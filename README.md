@@ -142,3 +142,12 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 - 2023/03/15 [出張版 脆弱性対応勉強会 #03（長崎）](https://zeijyakuseitaioukenkyukai.connpass.com/event/275421/)
 - 2023/06/01 [出張版 脆弱性対応勉強会 #04（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/285245/)
 - 2024/02/09 [出張版 脆弱性対応勉強会 #05（名古屋）](https://zeijyakuseitaioukenkyukai.connpass.com/event/306261/)
+
+## 他の勉強会等
+
+脆弱性対応勉強会以外の勉強会での講演等、思い出したら追加します
+
+- yyyy-mm-dd [塩尻サイバーセキュリティ勉強会/ほぼ毎回](https://shiojiri-cyber.connpass.com/)
+- 2022-08-10 [総関西サイバーセキュリティLT大会（34回）/基調講演](https://sec-kansai.connpass.com/event/253980/)
+- 2024-02-04 [OWASP Nagoya Chapterミーティング第33回 OWASP 758 Day/Speaker](https://owaspnagoya.connpass.com/event/305686/)
+- 2024-05-15 [総関西サイバーセキュリティLT大会（41回）/LT](https://sec-kansai.connpass.com/event/316351/)
