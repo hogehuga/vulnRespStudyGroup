@@ -1,0 +1,124 @@
+digraph figure{
+    subgraph cluster00{
+        a [label="脆弱性発見"];
+        b [label="脆弱性対応"];
+        c [label="対応完了"];
+        d [label="対応しきれない"];
+        e [shape=box, label="人員/工数"];
+        f [shape=box, label="システム\n環境"];
+        g [shape=box, label="時間"];
+        h [shape=box, label="費用"];
+        i [shape=box, label="etc.."];
+        a -> b [label="対応開始"];
+        b -> c [label="リソース\n充足"];
+        b -> d [label="リソース\n不足"];
+        e -> b [dir=both, color=orangered];
+        f -> b [dir=both, color=orangered];
+        g -> b [dir=both, color=orangered];
+        h -> b [dir=both, color=orangered];
+        i -> b [dir=both, color=orangered];
+        {rank=same;a;b;c}
+    }
+    subgraph cluster01{
+        rankdir=LR;
+        aa [label="脆弱性それ自体の危険度"];
+        ab [shape=cds, label="CVSS等"];
+        bb [label="環境による要因"];
+        ba [shape=cds, label="システムの状況等"];
+        cc [shape=box, label="無関係\n(影響なし)"];
+        dd [shape=box, label="許容できる\n(後回し)"];
+        ee [shape=box, label="影響中程度\n(順次対応)"];
+        ff [shape=box, label="影響極大\n(即時対応)"];
+
+
+        aa -> bb-> cc;
+        bb -> dd;
+        bb -> ee;
+        bb -> ff;
+        ab -> aa;
+        ba -> bb;
+        {rank=same;aa;ab}
+        {rank=same;ba;bb}
+    }
+    subgraph cluster02{
+        aaa [shape=box, label="0.脆弱性の認知"];
+        bba [shape=box, label="1.影響分析"];
+        cca [shape=box, label="2.リスク評価"];
+        dda [shape=box, label="3.対応方針決定(記録)"];
+        eea [shape=box, label="対応フロー全体に戻る"];
+
+        aab [shape=component, label="web診断",color=green];
+        aac [shape=component, label="プラットフォーム\n診断,color=green"];
+        aba [shape=note, label="影響可能性の認知",color=orangered];
+
+        bbb [shape=component, label="システムの環境"];
+        bbc [shape=component, label="企業の使命"];
+        baa [shape=note, label="自組織への影響認知",color=orangered]
+
+        ccb [shape=component, label="攻撃可能性"];
+        ccc [shape=component, label="インシデント\n発生時の影響"];
+        caa [shape=component, label="自組織への\nリスク認知",color=orangered];
+
+        ddb [shape=component, label="コスト"];
+        ddc [shape=component, label="スケジュール"];
+        ddd [shape=component, label="リスク"];
+        daa [shape=note, label="対応決定,\n判断の記録", color=orangered];
+
+        aaa -> bba -> cca -> dda -> eea;
+        aaa -> aba [color=orangered];
+        aba -> aab [dir=back,color=green];
+        aba -> aac [dir=back,color=green];
+
+        bbb -> baa [color=green];
+        bbc -> baa [color=green];
+        baa -> bba [dir=back,color=orangered];
+
+        cca -> caa [color=orangered];
+        caa -> ccb [dir=back,color=green];
+        caa -> ccc [dir=back,color=green];
+
+        ddb -> daa [color=green];
+        ddc -> daa [color=green];
+        ddd -> daa [color=green];
+        daa -> dda [dir=back,color=orangered];
+
+        {rank=same;aaa;bba;cca;dda;eea}
+        
+    }
+    subgraph cluster03 {
+        c01 [shape=folder,label="第1章\l対応基本方針の策定\lについて説明\l"];
+        c02 [shape=folder,label="第2章\l高度な専門知識を持った人が\lリスク判定の\l精度を上げる手法を解説\l"];
+        c03 [shape=folder,label="第3章\l詳細な判断に利用できそうな\lフレームワークの紹介\l"];
+        c01 -> c02 -> c03;
+    }
+    subgraph cluster04 {
+        subgraph cluster041{
+            d03a [shape=box, label="脆弱性の認知"];
+            d03b [shape=box, label="影響分析"];
+            d03c [shape=box, label="リスク評価"];
+            d03d [shape=box, label="対応方針決定(記録)"];
+            d03e [shape=box, label="対応フロー全体に戻る"];
+            d03a -> d03b -> d03c -> d03d -> d03e;
+        }
+        subgraph cluster040{
+            label="全体"
+            d03f1 [shape=cds, label="関係者の役割と責任を明確にする"]
+            d03f2 [shape=cds, label="トリアージガイドラインの敵意用範囲の決定"]
+        }
+        subgraph cluster042{
+            label="影響分析/リスク評価"
+            d03f3 [shape=cds, label="脆弱性影響範囲の調査"]
+        }
+        subgraph cluster043{
+            label="対応方針決定(記録)"
+            d03f4 [shape=cds, label="トリアージで決めるべきこと"]
+            d03f5 [shape=cds, label="脆弱性管理方法"]
+            d03f4->d03f5 [style=invis];
+        }
+        d03f2 -> d03a [style=invis];
+        d03f3 -> d03b;
+        d03f3 -> d03c;
+        d03f4 -> d03d;
+        d03f5 -> d03d;
+    }
+}
