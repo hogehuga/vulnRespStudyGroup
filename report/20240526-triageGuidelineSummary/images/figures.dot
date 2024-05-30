@@ -103,7 +103,7 @@ digraph figure{
         subgraph cluster040{
             label="全体"
             d03f1 [shape=cds, label="関係者の役割と責任を明確にする"]
-            d03f2 [shape=cds, label="トリアージガイドラインの敵意用範囲の決定"]
+            d03f2 [shape=cds, label="トリアージガイドラインの適用範囲の決定"]
         }
         subgraph cluster042{
             label="影響分析/リスク評価"
