@@ -4,6 +4,7 @@
   - 2024/09/21 10:00-(JST) Youtube公開
 - URL
   - https://zeijyakuseitaioukenkyukai.connpass.com/event/331547/
+  - https://youtu.be/-yDE03dd_YU
 - Title
   - 第02回 脆弱性対応勉強会VR
 

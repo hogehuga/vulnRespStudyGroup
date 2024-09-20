@@ -32,8 +32,7 @@ hogehuga
 ---
 
 # whoami
-
-hogehuga a.k.a. HOGE-San
+hogehuga
 - Work
   - 脆弱性管理等について研究開発を行い、イベント発表等で社内外へ還元する
 - 発表歴
@@ -52,8 +51,8 @@ hogehuga a.k.a. HOGE-San
 
 # 今回の概要と目次
 
-EPSSについて、以前より認知が広まってきているようなので、現時点の(私が)認識している状況を共有します。
-概要を再確認し、簡単な使い方と、どのように活用していくのがよさそうかをお話しします。
+EPSSについて、以前より認知が広まってきているようなので、現時点の（私が）認識している状況を共有します。
+概要を再確認し、簡単な使い方と、どのように活用していくのが良さそうかをお話しします。
 
 - 想定ゴール
   - EPSSの概要を理解する
@@ -109,7 +108,7 @@ https://www.first.org/epss/model
 [https://www.first.org/epss/articles/prob_percentile_bins](https://www.first.org/epss/articles/prob_percentile_bins)
 
 - **epss**
-  - 今後30に置換の悪用確率（0-1）を示す、EPSSスコア や EPSS Probabilityと呼ばれるもの
+  - 今後30日間の悪用確率（0-1）を示すスコアで、EPSS Probabilityと呼ばれるもの
 - **perentile**
   - 現在のスコアのパーセンタイル、スコアがつけられたすべての脆弱性のうち EPSSスコアが同じかそれより低い物の割合
 
@@ -150,7 +149,7 @@ EPSSの値の違いを相対的に比較する際に有効
 - "パーセンタイルは、現在の順位以下のすべての値の割合です"
   - `That is, the percentile is the proportion of all values less than or equal to the current rank.`
   - 簡潔に言えばランクであり、EPSSが同値の物が全体のどれだけあるかを示す
-  - `100 - Percentile` することで、上位 N%の物 といういい方もできる
+  - `100 - Percentile` することで、上位 N%の物 という言い方もできる
 
 
 ![h:500](./image/epss_percentiles.png)
@@ -170,6 +169,20 @@ FIRSTの資料より、EPSS低スコアの物が増えたようで、グラフ�
 ## (再掲)
 
 ![h:650](./image/epss_percentiles.png) ![h:650](./image/percentile-all.png)
+
+---
+
+## 直近のデータ
+
+![bg right:50% h:700](./image/epss-202407-08.png) 
+
+2024-07-01から2か月間(2024-09-01迄)で、新たに追加されたCVE-IDについてまとめた
+
+- 対象期間に、6,047個のCVE-IDが追加されていた
+- そのうち、0.6程度を超えているものは10個以下程度
+- 残りの大半(6037/6047なので、99.8%程度)は、0.15以下に収まっている
+  - これらのCVE-IDで、CVSS Base Scoreがそこそこ高いもの(6以上等)はそれなりにあると推察される
+    - CVSSとEPSSを掛け合わせ、`脆弱性:中程度 x 発生確率:低` や `脆弱性:高 x 発生確率:低` 等でトリアージする
 
 ---
 
@@ -214,13 +227,15 @@ EPSSを理解をするために、APIアクセスで実際にデータを触っ�
 時系列のデータを取得する
 - `https://api.first.org/data/v1/epss?cve=CVE-2022-25204&scope=time-series`
 
-EPSSのデータで絞り込む
+EPSSのデータを絞り込む
 - TOP 100 
   - `https://api.first.org/data/v1/epss?order=!epss`
 - EPSS Score
   - `https://api.first.org/data/v1/epss?epss-gt=0.95`
 - EPSS Percentile
   - `https://api.first.org/data/v1/epss?percentile-gt=0.95`
+- 特定日の全てのデータを取込む
+  - `https://epss.cyentia.com/epss_scores-YYYY-MM-DD.csv.gz`
 
 ![bg right:20% h:600](./image/api-sample3.png)
 
@@ -288,7 +303,7 @@ EPSSは、あくまで「今後30日間での悪用される確率」であり�
 例
 - まだ何もやれていない組織
   - EPSSはまだ不要
-    - 先に、脆弱性対応を行う組織運用を
+    - 先に、脆弱性対応を行う組織運用を作ろう
 - 自組織でオープンな情報も参照しつつ、判断している
   - CVSSだけ（BaseScoreやVector）は使っている組織
   - ここには有効かもしれない。追加の情報として扱う。
@@ -339,7 +354,7 @@ EPSS ScoreとProbabilityにおいて、どのような状況が発生し、ど�
   - あくまで、可能性、の数値
     - この値での判断を独り歩きさせない
   - その可能性をどう考えるか/扱うかは、あなた次第
-    - だからポリシー作ろう
+    - だからポリシーを作ろう
     - 数値の増減で一喜一憂しない
     - 別の指標と組み合わせよう
       - KEVやExploit情報と併せよう
@@ -433,3 +448,14 @@ EPSSについておおよそ理解ができたと思います。
   - https://isog-j.org/output/2023/Textbook_soc-csirt_v3.html
 - METI: サイバーセキュリティ経営ガイドラインと支援ツール
   - https://www.meti.go.jp/policy/netsecurity/mng_guide.html
+
+---
+
+# Appendix(3)
+
+- 警戒情報として
+  - JCPERT/CC 注意喚起
+    - https://www.jpcert.or.jp/at/2024.html
+  - CISA Cybersecurity Alerts&Advisories
+    - https://www.cisa.gov/news-events/cybersecurity-advisories
+    - https://www.cisa.gov/news-events/news
