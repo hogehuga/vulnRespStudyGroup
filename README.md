@@ -106,51 +106,52 @@ facebook上のグループ "脆弱性対応研究会" の資料を配置しし�
 
 基本的には関東で開催する現地開催の勉強会
 
-- 2018/12/08 [第00回 脆弱性対応勉強会（脆弱性対応について体験しよう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/109946/)
-- 2019/01/26 [第01回 脆弱性対応勉強会（脆弱性対応について体験しよう/再）](https://zeijyakuseitaioukenkyukai.connpass.com/event/113847/)
-- 2019/03/30 [第02回 脆弱性対応勉強会（勝手にIPAテクニカルウオッチ ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/123143/)
-- 2019/04/20 [第03回 脆弱性対応勉強会（IPAの「中小企業の情報セキュリティ対策ガイドライン第3版」を読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/127635/)
-- 2019/06/01 [第04回 脆弱性対応勉強会（ログ分析の初歩：ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/131007/)
-- 2019/06/29 [第05回 脆弱性対応勉強会（ログ管理と分析の初歩）](https://zeijyakuseitaioukenkyukai.connpass.com/event/137131/)
-- 2019/08/24 [第06回 脆弱性対応勉強会（日機能要求グレード2018読合せ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/141424/)
-- 2019/11/23 [第07回 脆弱性対応勉強会（実験会：AppGoat体験会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/156511/)
-- 2020/01/11 [第08回 脆弱性対応勉強会（WordPress Pluginの脆弱性ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/160949/)
-- 2020/07/31 [第09回 脆弱性対応勉強会（脆弱性管理製品を知る）](https://zeijyakuseitaioukenkyukai.connpass.com/event/182959/)
-- 2022/12/03 [第10回 脆弱性対応勉強会（X.1060の概要と使い所）](https://zeijyakuseitaioukenkyukai.connpass.com/event/266469/)
-- 2023/03/04 [第11回 脆弱性対応勉強会（X.1060で考えるサイバーセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/269837/)
-- 2023/09/02 [第12回 脆弱性対応勉強会（政策研究大学院大学のインシデント報告書を読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/294430/)
-- 2024/03/23 [第13回 脆弱性対応勉強会（NTT西日本の顧客情報不正持出しのレポートを読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/312278/)
+- 2018-12-08 [第00回 脆弱性対応勉強会（脆弱性対応について体験しよう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/109946/)
+- 2019-01-26 [第01回 脆弱性対応勉強会（脆弱性対応について体験しよう/再）](https://zeijyakuseitaioukenkyukai.connpass.com/event/113847/)
+- 2019-03-30 [第02回 脆弱性対応勉強会（勝手にIPAテクニカルウオッチ ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/123143/)
+- 2019-04-20 [第03回 脆弱性対応勉強会（IPAの「中小企業の情報セキュリティ対策ガイドライン第3版」を読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/127635/)
+- 2019-06-01 [第04回 脆弱性対応勉強会（ログ分析の初歩：ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/131007/)
+- 2019-06-29 [第05回 脆弱性対応勉強会（ログ管理と分析の初歩）](https://zeijyakuseitaioukenkyukai.connpass.com/event/137131/)
+- 2019-08-24 [第06回 脆弱性対応勉強会（日機能要求グレード2018読合せ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/141424/)
+- 2019-11-23 [第07回 脆弱性対応勉強会（実験会：AppGoat体験会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/156511/)
+- 2020-01-11 [第08回 脆弱性対応勉強会（WordPress Pluginの脆弱性ハンズオン）](https://zeijyakuseitaioukenkyukai.connpass.com/event/160949/)
+- 2020-07-31 [第09回 脆弱性対応勉強会（脆弱性管理製品を知る）](https://zeijyakuseitaioukenkyukai.connpass.com/event/182959/)
+- 2022-12-03 [第10回 脆弱性対応勉強会（X.1060の概要と使い所）](https://zeijyakuseitaioukenkyukai.connpass.com/event/266469/)
+- 2023-03-04 [第11回 脆弱性対応勉強会（X.1060で考えるサイバーセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/269837/)
+- 2023-09-02 [第12回 脆弱性対応勉強会（政策研究大学院大学のインシデント報告書を読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/294430/)
+- 2024-03-23 [第13回 脆弱性対応勉強会（NTT西日本の顧客情報不正持出しのレポートを読もう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/312278/)
+- 2025-02-15 [第14回 脆弱性対応勉強会(2024年末発表のまとめ)](https://zeijyakuseitaioukenkyukai.connpass.com/event/341697/)
 
 ## Expansion
 
 スピーカーをお呼びして、お話をして頂く勉強会
 
-- 2020/09/18 [脆弱性対応勉強会Expansion 第01回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/187890/)
-- 2021/02/22 [脆弱性対応勉強会Expansion 第02回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/203607/)
-- 2021/09/24 [脆弱性対応勉強会Expansion 第03回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/224525/)
-- 2021/10/22 [脆弱性対応勉強会Expansion 第04回（アジャイルセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/226862/)
-- 2021/11/19 [脆弱性対応勉強会Expansion 第05回（OWASP ZAP&EC-CUBE）](https://zeijyakuseitaioukenkyukai.connpass.com/event/229038/)
-- 2022/09/20 [脆弱性対応勉強会Expansion 第06回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/254807/)
-- 2022/01/18 [脆弱性対応勉強会Expansion 第07回（VDPを学ぶ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/305932/)
+- 2020-09-18 [脆弱性対応勉強会Expansion 第01回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/187890/)
+- 2021-02-22 [脆弱性対応勉強会Expansion 第02回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/203607/)
+- 2021-09-24 [脆弱性対応勉強会Expansion 第03回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/224525/)
+- 2021-10-22 [脆弱性対応勉強会Expansion 第04回（アジャイルセキュリティ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/226862/)
+- 2021-11-19 [脆弱性対応勉強会Expansion 第05回（OWASP ZAP&EC-CUBE）](https://zeijyakuseitaioukenkyukai.connpass.com/event/229038/)
+- 2022-09-20 [脆弱性対応勉強会Expansion 第06回（脆弱性診断研究会）](https://zeijyakuseitaioukenkyukai.connpass.com/event/254807/)
+- 2022-01-18 [脆弱性対応勉強会Expansion 第07回（VDPを学ぶ）](https://zeijyakuseitaioukenkyukai.connpass.com/event/305932/)
 
 ## 出張版
 
 関東以外で開催する現地開催の勉強会
 
-- 2022/04/01 [出張版 脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/event/242948/)
-- 2022/07/08 [出張版 脆弱性対応勉強会 #02（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/253265/)
-- 2023/03/15 [出張版 脆弱性対応勉強会 #03（長崎）](https://zeijyakuseitaioukenkyukai.connpass.com/event/275421/)
-- 2023/06/01 [出張版 脆弱性対応勉強会 #04（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/285245/)
-- 2024/02/09 [出張版 脆弱性対応勉強会 #05（名古屋）](https://zeijyakuseitaioukenkyukai.connpass.com/event/306261/)
+- 2022-04-01 [出張版 脆弱性対応勉強会 #01（札幌）](https://zeijyakuseitaioukenkyukai.connpass.com/event/242948/)
+- 2022-07-08 [出張版 脆弱性対応勉強会 #02（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/253265/)
+- 2023-03-15 [出張版 脆弱性対応勉強会 #03（長崎）](https://zeijyakuseitaioukenkyukai.connpass.com/event/275421/)
+- 2023-06-01 [出張版 脆弱性対応勉強会 #04（大阪）](https://zeijyakuseitaioukenkyukai.connpass.com/event/285245/)
+- 2024-02-09 [出張版 脆弱性対応勉強会 #05（名古屋）](https://zeijyakuseitaioukenkyukai.connpass.com/event/306261/)
 
 
 ## VR
 
 youtube向けの、アバターを使った配信
 
-- 2023/09/21 第01回 脆弱性対応勉強会VR（EPSSについて理解しよう）: connpassイベント公開なし
+- 2023-09-21 第01回 脆弱性対応勉強会VR（EPSSについて理解しよう）: connpassイベント公開なし
   - https://youtu.be/DgcLOJ59ZZ8
-- 2023/09/21 [第02回 脆弱性対応勉強会VR（EPSSについて理解しよう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/331547/)
+- 2023-09-21 [第02回 脆弱性対応勉強会VR（EPSSについて理解しよう）](https://zeijyakuseitaioukenkyukai.connpass.com/event/331547/)
   - https://youtu.be/-yDE03dd_YU
 
 
@@ -158,8 +159,23 @@ youtube向けの、アバターを使った配信
 
 脆弱性対応勉強会以外の勉強会での講演等、思い出したら追加します
 
-- yyyy-mm-dd [塩尻サイバーセキュリティ勉強会/ほぼ毎回](https://shiojiri-cyber.connpass.com/)
-- 2022-08-10 [総関西サイバーセキュリティLT大会（34回）/基調講演](https://sec-kansai.connpass.com/event/253980/)
-- 2024-02-04 [OWASP Nagoya Chapterミーティング第33回 OWASP 758 Day/Speaker](https://owaspnagoya.connpass.com/event/305686/)
-- 2024-05-15 [総関西サイバーセキュリティLT大会（41回）/LT](https://sec-kansai.connpass.com/event/316351/)
-- 2024-11-19 [Security.any #01 セキュリティあるあるLT](https://security-any.connpass.com/event/333680/)
+- 2022
+  - 情報散逸
+  - 2022-08-10 [総関西サイバーセキュリティLT大会（34回）/基調講演](https://sec-kansai.connpass.com/event/253980/)
+- 2023
+  - 情報散逸
+  - 非公開
+- 2024
+  - 2024-02-03 [【第10回】サイバーセキュリティ勉強会2024冬 in 塩尻](https://shiojiri-cyber.connpass.com/event/302612/)
+  - 2024-02-10 [OWASP Nagoya Chapterミーティング第33回 / OWASP 758 Day](https://owaspnagoya.connpass.com/event/305686/)
+  - 2024-05-15 [総関西サイバーセキュリティLT大会（41回）/LT](https://sec-kansai.connpass.com/event/316351/)
+  - 2024-07-06 [Hardening Designers Conference 2024 – 堅牢化における未解決課題を切り拓く3日間](https://wasforum.jp/2024/06/hardening-designers-conference-2024-convolutions/)
+  - 2024-07-27 [InternetWeek SHOWCASE in 福岡:C23](https://internetweek.jp/sc-fukuoka/archives/program)
+  - 2024-11-19 [Security.any #01 セキュリティあるあるLT](https://security-any.connpass.com/event/333680/)
+  - 2024-11-25 [Internet Week 2024 BOF](https://internetweek.jp/2024/archives/program/b2)
+  - 2025-12-20 [NCA Annual Conference 2024](https://annualconf.nca.gr.jp/program/day2/r4_1000/)
+  - 2024-12-28 [【ハードニング】京都産業大学情報理工学部ランチタイムトーク x OWASP Kansai](https://owasp-kansai.doorkeeper.jp/events/179740)
+- 2025
+  - 2025-01-24 [OWASP Nagoya Chapter ミーティング 第37回](https://owaspnagoya.connpass.com/event/341317/)
+  - 2025-02-01 [【第12回】サイバーセキュリティ勉強会2025冬 in 塩尻](https://shiojiri-cyber.connpass.com/event/329910/)
+  - 2025-02-12 [総関西サイバーセキュリティＬＴ大会（第49回）](https://sec-kansai.connpass.com/event/341712/)
