@@ -1,0 +1,209 @@
+/* @theme vulnstudy-nonlogo-amber */
+
+@import 'default';
+
+/**
+use
+---
+marp: true
+theme: vulnstudy-* 
+paginate: true
+header: .
+footer: Copyright (c)2025 by 脆弱性対応勉強会
+---
+
+<!-- _class: title-->
+
+# title.
+## Subtitle
+
+date
+writer
+
+---
+
+<!-- _class: paragraph -->
+
+# paragraph
+
+comment
+
+---
+
+<!-- _class: invert -->
+
+# Header1
+
+context
+
+......
+
+**/
+
+section {
+	width: 1920px;
+	height: 1080px;
+	font-size: 45px;
+	color: rgb(71, 71, 71); /* 基本の文字色 */
+	/* Existing padding */
+	padding: 100px;
+	
+	/* Changed to align content to the top-left */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start; /* Content starts from the top */
+	align-items: flex-start;   /* Content aligns to the left */
+	position: relative; /* ヘッダー・フッター、TLP表示の絶対配置の基準となるよう設定 */
+}
+
+/* TLP画像を常に左上に表示する設定（スライドごとの制御は不可） */
+section::before {
+    content: ""; /* 画像を表示するために空のcontent */
+    position: absolute;
+    top: 0; /* 左上、ヘッダーの上 */
+    left: 0; /* 左上、ヘッダーの上 */
+    width: 160px; /* 画像の元のサイズに合わせて調整。必要に応じて変更してください */
+    height: 160px; /* 画像の元のサイズに合わせて調整。必要に応じて変更してください */
+    background-image: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-AMBER.png'); /* ここに表示したいTLP画像を指定 */
+    background-size: contain; /* 要素に画像を収める */
+    background-repeat: no-repeat;
+    background-position: left top; /* 左上に配置 */
+    z-index: 103; /* ヘッダー(100)やページ番号(101)よりさらに手前に */
+}
+
+/* Style for the header/title area to fix it at the top */
+section h1:first-child {
+    /* Ensure title is at the top within the padding area */
+    margin-top: 0; /* Override any default top margin */
+    padding-bottom: 10px; /* Space for the line */
+    border-bottom: 2px solid teal; /* Add a line under the title */
+    width: 100%; /* Make the line span full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Adjust margin for subsequent content after the first h1 */
+section > *:not(h1:first-child) {
+    margin-top: 20px; /* Adjust spacing for content below the line */
+}
+
+/* If there's an h2 directly after h1 and it's part of the title block, adjust its margin */
+section h1 + h2 {
+    margin-top: 0; /* Keep subtitle close to the main title */
+}
+
+/* Original section header (gradient bar) - 共通スタイル */
+section header {
+	width:100%;
+	background: linear-gradient(to right, teal, white);
+	color: black;
+	padding: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100; /* 他のコンテンツより常に手前に表示 */
+	text-align: center; /* ヘッダーのテキストを中央に配置 */
+}
+
+section footer {
+	width:100%;
+	background: linear-gradient(to right, teal, white);
+	color: black;
+	padding: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 100; /* 他のコンテンツより常に手前に表示 */
+	text-align: center; /* フッターのテキストを中央に配置 */
+}
+
+/* --- ページ番号のスタイル調整 --- */
+section::after {
+	content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+	text-align: right; /* 右寄せに調整 (footerの右に合わせる) */
+	position: absolute; /* 絶対配置 */
+	bottom: 3px; /* フッターの上、かつフッターの高さ(約30px)分プラスα */
+	right: 40px; /* 右からの位置を調整 (sectionのpaddingに合わせる) */
+	color: rgb(71, 71, 71); /* 基本の文字色に合わせる */
+	font-size: 40px; /* 文字サイズ調整 */
+	z-index: 101; /* フッターより手前に表示 */
+}
+
+/* --- class: title のスタイル調整 --- */
+section.title {
+	display: flex; /* Flexboxコンテナとして設定 */
+	flex-direction: column; /* 子要素を縦方向に並べる */
+	align-items: center; /* 水平方向の中央揃え (コンテンツ全体が中央寄りに) */
+	
+	/* ヘッダー・フッターの領域を確保するためのパディング調整 */
+	padding-top: 60px; 
+	padding-bottom: 60px;
+	
+	/* タイトルとサブタイトルを中央寄りにするための調整 */
+	justify-content: flex-start; /* コンテンツを上から開始 */
+	padding-top: 20%; /* スライド上部から20%の位置にタイトル群を開始 (調整可能) */
+}
+
+/* class: title スライド内のヘッダーとフッターは、sectionの絶対配置で十分なため、特に追加のグリッド指定は不要 */
+/* Z-indexを上げて確実に前面に表示されるようにする */
+section.title header {
+    z-index: 101; /* 他のコンテンツよりさらに手前に */
+}
+
+section.title footer {
+    z-index: 101; /* 他のコンテンツよりさらに手前に */
+}
+
+/* class: title 内のh1 (タイトル) のスタイル */
+section.title h1 {
+	font-size: 100px; /* 大きな文字サイズ */
+	text-align: center; /* テキストを左右中央に */
+	width: 100%; /* 親要素の幅いっぱいに広げることでtext-align:centerが有効に */
+	margin-top: 0; /* 上方向の余白をなくす */
+	margin-bottom: 0; /* 下方向の余白をなくす */
+	padding-bottom: 10px; /* サブタイトルとの間に少し隙間 */
+	color: rgb(71, 71, 71); /* 他のh1と同じ色に設定 */
+}
+
+/* class: title 内のh2 (サブタイトル) のスタイル */
+section.title h2 {
+	font-size: 60px; /* h1より小さく */
+	color: gray; /* 薄いグレー色 */
+	text-align: center; /* テキストを左右中央に */
+	width: 100%; /* 親要素の幅いっぱいに広げることでtext-align:centerが有効に */
+	margin-top: 10px; /* タイトルからの隙間 */
+	margin-bottom: 0; /* 下方向の余白をなくす */
+	padding-bottom: 0;
+}
+
+/* class: title 内のその他の本文に対するスタイル */
+section.title > *:not(h1, h2, header, footer) {
+    /* h1, h2, header, footer 以外の要素を対象 */
+    align-self: flex-start; /* 左揃え */
+    margin-top: auto; /* 上方向の余白を自動で調整し、本文を可能な限り下部に寄せる */
+    margin-bottom: 0; /* 下方向の余白をなくす */
+    text-align: left; /* テキストを左揃え */
+    font-size: 30px; /* 本文の文字サイズ */
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    /* 左右のパディングはsectionに設定されているため、ここでは調整不要の場合が多い */
+    /* 必要であれば、padding-left, padding-rightを調整 */
+}
+
+
+/* class: paragraph のスタイル */
+section.paragraph {
+	text-align: center;
+	justify-content: center;
+}
+
+section.statement {
+	justify-content: center;
+}
+
+/* Table styles */
+section table {
+	font-size: 30px;
+}
+
+section table tr th, section table tr td {
+	padding: 5px 20px;
+}
