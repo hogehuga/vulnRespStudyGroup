@@ -188,3 +188,5 @@ youtube向けの、アバターを使った配信
   - 2025-02-28 [セキュリティエンジニアの知識地図 - Forkwell Library #82](https://forkwell.connpass.com/event/345865/)
   - 2025-03-22 [サイバーセキュリティ、失敗と後日談 Vol.01](https://connpass.com/event/345194/)
   - 2025-05-28 [総関西サイバーセキュリティＬＴ大会（第51回）](https://sec-kansai.connpass.com/event/352189/)
+  - 2025-08-23 [【第13回】サイバーセキュリティ勉強会2025夏 in 塩尻](https://shiojiri-cyber.connpass.com/event/348118/)
+    - [対応する資料](./report/20250823-siojiri/Shiojiri-CognitiveWarfare.pdf)
