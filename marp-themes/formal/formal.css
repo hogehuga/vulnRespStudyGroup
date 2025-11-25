@@ -1,0 +1,350 @@
+/* @theme formal */
+
+@import 'default';
+
+/* =========================================
+   1. 設定・変数定義
+   ========================================= */
+:root {
+    /* --- 色設定 --- */
+    --color-main: teal;                /* メインカラー（線やヘッダー） */
+    --color-text: rgb(71, 71, 71);     /* 通常の文字色 */
+    --color-text-sub: gray;            /* サブカラー（H2, H3など） */
+    
+    /* 背景色: 真っ白ではなく、柔らかいクリーム色に変更 */
+    --color-bg: rgb(247, 243, 238);
+
+    /* --- ロゴ初期値 --- */
+    --logo-image: none;
+
+    /* --- TLP画像URL定義 --- */
+    --tlp-url-white: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-WHITE.png');
+    --tlp-url-green: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-GREEN.png');
+    --tlp-url-amber: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-AMBER.png');
+    --tlp-url-red:   url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-RED.png');
+}
+
+/* =========================================
+   2. ベースレイアウト (section)
+   ========================================= */
+section {
+    width: 1920px;
+    height: 1080px;
+    
+    /* 基本文字サイズ (デフォルト) */
+    font-size: 45px;
+    
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    
+    /* 余白設定: 上70px, 左右80px, 下80px */
+    padding: 70px 80px 80px 80px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; 
+
+    /* TLP初期値 */
+    --tlp-current: var(--tlp-url-green);
+}
+
+/* --- 文字サイズ縮小モード (class: small) --- */
+/* 詳細情報を詰め込む場合に使用 (40px) */
+section.small {
+    font-size: 40px;
+}
+/* smallモード時の要素間隔微調整 */
+section.small > *:not(h1, header, footer, .pagination) {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   3. ロゴ & TLP画像 (最前面配置)
+   ========================================= */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 103;
+
+    background-image: var(--tlp-current), var(--logo-image);
+    
+    /* TLP(左上), ロゴ(右上: 右20px, 上10px) */
+    background-position: left 0 top 0, right 20px top 10px;
+    
+    /* サイズ: TLP 160px, ロゴ 12% */
+    background-size: 160px auto, 12%;
+    
+    background-repeat: no-repeat, no-repeat;
+}
+
+/* TLP切り替えクラス */
+section.tlp-white { --tlp-current: var(--tlp-url-white); }
+section.tlp-green { --tlp-current: var(--tlp-url-green); }
+section.tlp-amber { --tlp-current: var(--tlp-url-amber); }
+section.tlp-red   { --tlp-current: var(--tlp-url-red); }
+section.tlp-none  { --tlp-current: none; }
+
+
+/* =========================================
+   4. 見出し (H1, H2, H3) デザイン
+   ========================================= */
+/* H1: スライドタイトル */
+section h1 {
+    font-size: 80px;
+    text-align: left;
+    width: 100%;
+    
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    
+    border-bottom: 5px solid var(--color-main);
+}
+
+/* H2: コンテンツ内の大見出し (60px) */
+section h2 {
+    font-size: 60px;
+    color: var(--color-text-sub);
+    text-align: left;
+    width: 100%;
+    
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* H3: コンテンツ内の中見出し (55px) */
+section h3 {
+    font-size: 55px;
+    color: var(--color-text-sub);
+    text-align: left;
+    width: 100%;
+    
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   5. 本文・コンテンツエリア
+   ========================================= */
+section > *:not(h1, h2, h3, header, footer, .pagination) {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+section ul, section ol {
+    margin-left: 1em;
+}
+
+section table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8em;
+}
+section table th, section table td {
+    padding: 0.2em 0.5em;
+}
+
+/* =========================================
+   6. ヘッダー・フッター
+   ========================================= */
+section header, section footer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+    background: linear-gradient(to right, var(--color-main), white);
+    color: black;
+    text-align: center;
+    font-size: 24px;
+    z-index: 100;
+}
+
+section header { top: 0; }
+section footer { bottom: 0; }
+
+section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    font-size: 40px;
+    color: var(--color-text);
+    z-index: 101;
+}
+
+/* =========================================
+   7. タイトルスライド (class: title)
+   ========================================= */
+section.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* 下余白を大きく取り、視覚的に中央より少し上にする */
+    padding: 0 50px 200px 50px;
+}
+
+/* タイトル (H1) */
+section.title h1 {
+    font-size: 100px;
+    text-align: center;
+    width: 80%; /* 線が長すぎないよう調整 */
+    
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 5px solid var(--color-main);
+}
+
+/* サブタイトル (H2) */
+section.title h2 {
+    font-size: 60px;
+    text-align: center;
+    color: var(--color-text-sub);
+    width: 80%;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+/* 発表者情報 (本文 pタグ) - 右下固定 */
+section.title p {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+    
+    text-align: right;
+    font-size: 36px;
+    color: var(--color-text);
+    line-height: 1.4;
+    width: auto;
+    margin: 0;
+}
+
+/* =========================================
+   8. セクション区切り (class: lead)
+   ========================================= */
+section.lead {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 上詰め固定 */
+    
+    padding-top: 380px; /* H1開始位置固定 */
+    padding-left: 80px;
+    padding-right: 80px;
+    
+    text-align: left;
+    position: relative;
+}
+
+/* セクション名 (H1) */
+section.lead h1 {
+    font-size: 90px;
+    text-align: left;
+    width: 100%; /* 下線を画面いっぱい引く */
+    
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid var(--color-main);
+}
+
+/* 説明文 (H2) */
+section.lead h2 {
+    font-size: 45px;
+    color: var(--color-text);
+    font-weight: normal;
+    line-height: 1.5;
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+}
+
+/* 所要時間 (H3) - 左上ヘッダー下固定 */
+section.lead h3 {
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    
+    font-size: 40px;
+    color: var(--color-text-sub);
+    font-weight: normal;
+    margin: 0;
+}
+
+/* アジェンダリスト (本文 ul) - 右下固定 */
+section.lead ul {
+    position: absolute;
+    bottom: 100px;
+    right: 40px;
+    width: 30%; /* 幅を制限 */
+    
+    font-size: 35px;
+    color: var(--color-text-sub);
+    line-height: 1.4;
+    text-align: left;
+    list-style-type: disc; /* 箇条書き記号あり */
+    margin: 0;
+    padding-left: 40px;
+}
+
+/* アジェンダ内の現在地強調 */
+section.lead ul strong {
+    color: var(--color-main);
+    font-weight: bold;
+    transform: scale(1.1);
+    transform-origin: left center;
+    display: inline-block;
+}
+
+/* =========================================
+   9. 反転カラー (class: invert)
+   ========================================= */
+section.invert {
+    /* 背景をダークグレーに */
+    background-color: var(--color-text);
+    
+    /* 文字色を「通常時の背景色(クリーム)」に変更 */
+    color: var(--color-bg);
+}
+
+/* 各要素の文字色強制変更 */
+section.invert h1,
+section.invert h2,
+section.invert h3,
+section.invert p,
+section.invert li,
+section.invert table {
+    color: var(--color-bg);
+}
+
+/* サブカラーも白系に（少し差をつけるため明度を下げる） */
+section.invert h2,
+section.invert h3 {
+    color: #e0e0e0;
+}
+
+/* ヘッダー・フッターのグラデーション調整（右側を背景色に溶け込ませる） */
+section.invert header,
+section.invert footer {
+    background: linear-gradient(to right, var(--color-main), var(--color-text));
+    color: white;
+}
+
+/* ページ番号 */
+section.invert::after {
+    color: var(--color-bg);
+}
