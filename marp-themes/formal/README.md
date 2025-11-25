@@ -5,6 +5,7 @@ TLP (Traffic Light Protocol) の表示切り替え、セクション区切り、
 
 ## 基本設定
 
+サンプルとして同じディレクトリに、`sample.md` と `sample.pdf` を配置しています。
 MarpのMarkdownファイルの先頭で以下のように指定してください。
 
 ```
