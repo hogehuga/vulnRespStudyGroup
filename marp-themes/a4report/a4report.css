@@ -1,0 +1,764 @@
+/*!
+ * Marp テーマ: a4report
+ *
+ * A4縦型・ドキュメントスタイル Marp テーマ
+ * レポート・報告書・技術文書・インテリジェンスレポート向け
+ *
+ * formal.css (hogehuga/vulnRespStudyGroup) の設計哲学を継承し、
+ * A4縦・文字量重視の文書用途向けに再設計。
+ *
+ * @theme      a4report
+ * @size       A4portrait 794px 1123px
+ *
+ * ─── 基本的な使い方 ───────────────────────────────────────────────
+ *   ---
+ *   marp: true
+ *   theme: a4report
+ *   paginate: true
+ *   ---
+ *   <!-- class: tlp-clear -->   ← これ1行だけで TLP 表示が完結
+ *
+ * ─── TLP クラス ───────────────────────────────────────────────────
+ *   TLP 画像は GitHub raw コンテンツを参照（ローカル配置不要）。
+ *
+ *   tlp-none  : TLP表示なし（デフォルト）
+ *   tlp-white : TLP:WHITE  （TLP-CLEAR.png を流用）
+ *   tlp-clear : TLP:CLEAR
+ *   tlp-green : TLP:GREEN
+ *   tlp-amber : TLP:AMBER
+ *   tlp-red   : TLP:RED
+ *
+ * ─── 特殊ページクラス ─────────────────────────────────────────────
+ *   title     : 表紙ページ
+ *   no-header : ヘッダー区切りを非表示
+ *
+ * ─── リポジトリ ───────────────────────────────────────────────────
+ *   https://github.com/hogehuga/vulnRespStudyGroup/tree/master/marp-themes/a4report
+ */
+
+
+/* =================================================================
+ * 1. Google Fonts インポート
+ * ================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Source+Code+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+
+/* =================================================================
+ * 2. CSS 変数定義
+ *    formal.css のカラーシステムを A4縦文書用に再解釈
+ * ================================================================= */
+:root {
+    /* --- formal.css 継承カラー --- */
+    --color-main:        teal;                  /* メインカラー（formal.css 同一） */
+    --color-main-dark:   #006666;               /* ダーク側（グラデ等） */
+    --color-main-light:  #e0f5f5;               /* 薄ティール（H2背景等） */
+    --color-text:        rgb(71, 71, 71);        /* 本文文字色（formal.css 同一） */
+    --color-text-sub:    gray;                   /* サブカラー（formal.css 同一） */
+    --color-bg:          rgb(247, 243, 238);     /* クリーム背景（formal.css 同一） */
+
+    /* --- 追加カラー --- */
+    --color-border:      #c8ccc8;
+    --color-border-light:#e2e8e2;
+    --color-bg-code:     #f0ede8;               /* クリーム系コード背景 */
+    --color-bg-th:       #d0eaea;               /* テーブルヘッダー */
+    --color-bg-tr-alt:   #f5f2ed;               /* テーブル縞 */
+    --color-bg-quote:    #eef7f7;               /* 引用背景 */
+
+    /* --- TLP 画像 URL（GitHub raw コンテンツ参照）---
+     *   formal.css と同じディレクトリ (marp-themes/) の PNG を参照する。
+     *   TLP-WHITE は専用画像がないため TLP-CLEAR を流用する。       */
+    --tlp-url-clear: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-CLEAR.png');
+    --tlp-url-green: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-GREEN.png');
+    --tlp-url-amber: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-AMBER.png');
+    --tlp-url-red:   url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-RED.png');
+
+    /* アクティブ TLP（クラスで上書き）
+     * --tlp-image : 表示する PNG（none = 非表示）
+     * --tlp-img-h : 画像の表示高さ                                   */
+    --tlp-image:     none;
+    --tlp-img-h:     18px;
+
+    /* --- フォント --- */
+    --font-main:   'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+                   'Yu Gothic Medium', 'Yu Gothic', 'Meiryo', sans-serif;
+    --font-mono:   'Source Code Pro', 'Courier New', Consolas, monospace;
+
+    /* --- レイアウト寸法 --- */
+    --pad-side:    50px;     /* 左右マージン */
+    --pad-top:     52px;     /* コンテンツ上端（ヘッダー領域込み） */
+    --pad-bottom:  40px;     /* コンテンツ下端（フッター領域込み） */
+    --header-h:    28px;     /* ヘッダー領域高さ */
+    --footer-h:    24px;     /* フッター領域高さ */
+}
+
+
+/* =================================================================
+ * 3. スライド (section) ベース
+ * ================================================================= */
+section {
+    /* A4 縦サイズ */
+    width:        794px;
+    height:       1123px;
+    box-sizing:   border-box;
+    overflow:     hidden;
+
+    /* コンテンツを上から積む（Word 的挙動） */
+    display:        flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:    stretch;
+    position:       relative;
+
+    /* 余白: ヘッダー/フッター領域を考慮 */
+    padding: var(--pad-top) var(--pad-side) var(--pad-bottom) var(--pad-side);
+
+    /* タイポグラフィ */
+    font-family:  var(--font-main);
+    font-size:    10pt;
+    line-height:  1.75;
+    color:        var(--color-text);
+    word-break:   break-word;
+    overflow-wrap: break-word;
+
+    /* 背景（formal.css 同一） */
+    background-color: var(--color-bg);
+}
+
+
+/* =================================================================
+ * 4. section::before — TLP 画像（左上・右下）
+ *
+ *    section::before を透明なフルページ要素として配置し、
+ *    同じ TLP 画像を左上・右下の2箇所に表示する。
+ *    区切り線は含めない（TLP 画像のみ）。
+ *
+ *    → <!-- class: tlp-red --> 1行だけで TLP 表示が完結する。
+ *      header: / footer: ディレクティブは不要。
+ *
+ *    ファイル配置（CSS と同じディレクトリ）:
+ *      TLP-CLEAR.png / TLP-GREEN.png / TLP-AMBER.png / TLP-RED.png
+ * ================================================================= */
+section::before {
+    content:        '';
+    position:       absolute;
+    top:            0;
+    left:           0;
+    width:          100%;
+    height:         100%;
+    pointer-events: none;
+    z-index:        103;
+
+    background-image:
+        var(--tlp-image),
+        var(--tlp-image);
+
+    background-position:
+        left 8px top 8px,
+        right 8px bottom 8px;
+
+    background-size:
+        auto var(--tlp-img-h),
+        auto var(--tlp-img-h);
+
+    background-repeat: no-repeat, no-repeat;
+}
+
+
+/* =================================================================
+ * 5. ページ番号 (section::after)
+ *    ※ Marpit の仕様: content に attr(data-marpit-pagination) を
+ *       必ず含めること。含めないと Marpit が content 宣言を無視する。
+ * ================================================================= */
+section::after {
+    content:    attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+    position:   absolute;
+    bottom:     8px;
+    left:       0;
+    right:      0;
+    text-align: center;
+    font-size:  8pt;
+    color:      var(--color-text-sub);
+    line-height: var(--footer-h);
+    pointer-events: none;
+}
+
+
+/* =================================================================
+ * 6. ヘッダー / フッター
+ *
+ *    TLP 表示は section::before の PNG 画像で行うため、
+ *    header / footer は任意のカスタムテキスト用として汎用化する。
+ *    header: / footer: ディレクティブを設定した場合のみ表示される。
+ * ================================================================= */
+header {
+    position:        absolute;
+    top:             7px;
+    left:            var(--pad-side);
+    right:           var(--pad-side);
+    height:          var(--header-h);
+    display:         flex;
+    align-items:     center;
+    justify-content: flex-end;   /* 右揃え（TLP画像は左上のため） */
+    font-size:       8pt;
+    color:           var(--color-text-sub);
+    z-index:         100;
+}
+
+footer {
+    position:        absolute;
+    bottom:          7px;
+    left:            var(--pad-side);
+    right:           var(--pad-side);
+    height:          var(--footer-h);
+    display:         flex;
+    align-items:     center;
+    justify-content: flex-start;  /* 左揃え（TLP画像は右下のため） */
+    font-size:       8pt;
+    color:           var(--color-text-sub);
+    z-index:         100;
+}
+
+
+/* =================================================================
+ * 7. TLP クラス（formal.css と同じクラス名）
+ *
+ *    使い方: <!-- class: tlp-red -->  ← これだけで OK
+ *
+ *    各クラスは --tlp-image 変数を上書きし、
+ *    section::before の背景画像として左上・右下に表示する。
+ *
+ *    formal.css と同じクラス名を採用し、
+ *    既存の Markdown との互換性を確保する。
+ * ================================================================= */
+
+section.tlp-none {
+    --tlp-image: none;
+}
+
+section.tlp-clear {
+    --tlp-image: var(--tlp-url-clear);
+}
+
+section.tlp-white {
+    --tlp-image: var(--tlp-url-clear);
+}
+
+section.tlp-green {
+    --tlp-image: var(--tlp-url-green);
+}
+
+section.tlp-amber {
+    --tlp-image: var(--tlp-url-amber);
+}
+
+section.tlp-red {
+    --tlp-image: var(--tlp-url-red);
+}
+
+
+/* =================================================================
+ * 8. 見出し (H1–H4)
+ *    formal.css の見出しデザイン哲学を A4 文書用サイズに変換
+ * ================================================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family:   var(--font-main);
+    font-weight:   700;
+    line-height:   1.4;
+    break-after:   avoid;
+    page-break-after: avoid;
+}
+
+/* H1: 文書・大章タイトル
+   formal.css の section h1 に相当（border-bottom: solid var(--color-main) を継承） */
+h1 {
+    font-size:      11pt;
+    color:          var(--color-main-dark);
+    border-bottom:  3px solid var(--color-main);
+    padding-bottom: 6px;
+    margin-top:     0;
+    margin-bottom:  14px;
+    letter-spacing: 0.02em;
+}
+
+/* H2: 大節タイトル
+   formal.css の section h2 に相当。左ボーダー + 薄背景でメリハリを出す */
+h2 {
+    font-size:      11pt;
+    color:          var(--color-main-dark);
+    border-left:    5px solid var(--color-main);
+    padding-left:   9px;
+    background:     linear-gradient(to right, var(--color-main-light) 0%, transparent 60%);
+    margin-top:     20px;
+    margin-bottom:  9px;
+}
+
+/* H3: 小節タイトル */
+h3 {
+    font-size:      11pt;
+    color:          var(--color-text-sub);
+    border-left:    3px solid var(--color-main);
+    padding-left:   7px;
+    margin-top:     14px;
+    margin-bottom:  7px;
+}
+
+/* H4: 項目見出し（formal.css には存在しないため新規追加） */
+h4 {
+    font-size:      11pt;
+    color:          var(--color-text-sub);
+    border-bottom:  1px dashed var(--color-border);
+    padding-bottom: 2px;
+    margin-top:     12px;
+    margin-bottom:  5px;
+}
+
+/* H5, H6（補助見出し） */
+h5 {
+    font-size:     10pt;
+    color:         var(--color-text-sub);
+    margin-top:    10px;
+    margin-bottom: 4px;
+}
+
+h6 {
+    font-size:     9.5pt;
+    color:         var(--color-text-sub);
+    font-weight:   500;
+    margin-top:    8px;
+    margin-bottom: 4px;
+}
+
+
+/* =================================================================
+ * 9. 本文テキスト
+ * ================================================================= */
+p {
+    margin: 0 0 8px 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color:           var(--color-main);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+strong, b {
+    font-weight: 700;
+    color:       var(--color-main-dark);
+}
+
+em, i {
+    font-style: italic;
+}
+
+
+/* =================================================================
+ * 10. リスト
+ *     formal.css: margin-left: 1em のみ定義。
+ *     a4report: 多段ネストと行間を丁寧に設定する。
+ * ================================================================= */
+ul, ol {
+    margin:       4px 0 8px 0;
+    padding-left: 22px;
+}
+
+ul ul, ul ol,
+ol ul, ol ol {
+    margin: 2px 0 2px 0;
+}
+
+ul            { list-style-type: disc;        }
+ul ul         { list-style-type: circle;      }
+ul ul ul      { list-style-type: square;      }
+ol            { list-style-type: decimal;     }
+ol ol         { list-style-type: lower-alpha; }
+ol ol ol      { list-style-type: lower-roman; }
+
+li {
+    margin-bottom: 3px;
+    line-height:   1.65;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+dl  { margin: 4px 0 8px 0; }
+
+dt {
+    font-weight: 700;
+    color:       var(--color-main-dark);
+    margin-top:  6px;
+}
+
+dd {
+    margin-left: 20px;
+    color:       var(--color-text-sub);
+}
+
+
+/* =================================================================
+ * 11. テーブル
+ *     formal.css: margin auto / font-size 0.8em / padding 0.2em 0.5em
+ *     a4report: 左揃え・フル幅・見やすいパディングに改善
+ * ================================================================= */
+table {
+    width:           100%;
+    border-collapse: collapse;
+    margin:          8px 0 12px 0;
+    font-size:       9.5pt;
+    line-height:     1.5;
+    break-inside:    avoid;
+    page-break-inside: avoid;
+}
+
+th {
+    background-color: var(--color-bg-th);
+    color:            var(--color-main-dark);
+    font-weight:      700;
+    text-align:       left;
+    padding:          6px 10px;              /* formal.css の 0.2em 0.5em より広め */
+    border:           1px solid var(--color-border);
+}
+
+td {
+    padding:        5px 10px;
+    border:         1px solid var(--color-border);
+    vertical-align: top;
+}
+
+tr:nth-child(even) td {
+    background-color: var(--color-bg-tr-alt);
+}
+
+
+/* =================================================================
+ * 12. コードブロック
+ * ================================================================= */
+
+/* インラインコード */
+code {
+    font-family:      var(--font-mono);
+    font-size:        9pt;
+    background-color: var(--color-bg-code);
+    border:           1px solid var(--color-border);
+    border-radius:    3px;
+    padding:          1px 5px;
+    white-space:      pre;
+}
+
+/* コードブロック（ダークテーマ） */
+pre {
+    background-color: #1e2533;
+    border:           1px solid #2e3a4e;
+    border-left:      4px solid var(--color-main);
+    border-radius:    4px;
+    padding:          10px 14px;
+    margin:           8px 0;
+    overflow-x:       auto;
+    font-size:        8.5pt;
+    line-height:      1.55;
+    break-inside:     avoid;
+    page-break-inside: avoid;
+}
+
+pre code {
+    font-size:  inherit;
+    color:      #d4dde8;
+    background: none;
+    border:     none;
+    padding:    0;
+    white-space: pre;
+}
+
+
+/* =================================================================
+ * 13. 引用 (blockquote)
+ * ================================================================= */
+blockquote {
+    margin:       8px 0;
+    padding:      8px 14px;
+    border-left:  4px solid var(--color-main);
+    background:   var(--color-bg-quote);
+    color:        var(--color-text-sub);
+    font-style:   italic;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+blockquote p {
+    margin:     0;
+    font-style: inherit;
+}
+
+blockquote > blockquote {
+    margin-top:  6px;
+    border-left: 3px solid var(--color-border);
+    background:  transparent;
+}
+
+
+/* =================================================================
+ * 14. 水平線 (hr)
+ * ================================================================= */
+hr {
+    border:     none;
+    border-top: 1.5px solid var(--color-border);
+    margin:     14px 0;
+}
+
+
+/* =================================================================
+ * 15. 画像
+ * ================================================================= */
+img {
+    max-width: 100%;
+    height:    auto;
+    display:   block;
+}
+
+figure {
+    margin:     8px 0;
+    text-align: center;
+}
+
+figcaption {
+    font-size:  9pt;
+    color:      var(--color-text-sub);
+    margin-top: 4px;
+}
+
+
+/* =================================================================
+ * 16. 表紙クラス (_class: title)
+ *     formal.css の section.title を A4縦ドキュメント用に再解釈
+ * ================================================================= */
+/* ─── section.title レイアウト ─────────────────────────────────
+ *
+ *  ┌──────────────────────────────────────┐
+ *  │  [ヘッダー / 区切り線]               │  ← ::before / header
+ *  │                                      │
+ *  │                                      │  ← 上部余白（~1/3 の位置まで）
+ *  │       ┌──────────────────────┐       │
+ *  │       │  # タイトル (H1)     │       │  ← 中央揃え・太字・下線
+ *  │       └──────────────────────┘       │
+ *  │       ## サブタイトル (H2)           │  ← 中央揃え・通常ウェイト
+ *  │                                      │
+ *  │  (↑ flex: 1 の余白でここまで伸びる)  │
+ *  │                                ____  │
+ *  │                   所属・組織名 ←  │  │  ← p 要素: 右揃え・下から積む
+ *  │                         日付 ←  │  │
+ *  │                    著者名 ←  │  │  │  ← 最終行が右下になる
+ *  └──────────────────────────────────────┘
+ *
+ *  使い方:
+ *    <!-- _class: title tlp-clear -->
+ *    # 文書タイトル
+ *    ## サブタイトル・概要説明
+ *
+ *    組織名
+ *    2025年6月30日
+ *    著者名
+ * ─────────────────────────────────────────────────────────── */
+section.title {
+    /* flex column で上から積む（p 要素を下に押し込むため） */
+    display:         flex;
+    flex-direction:  column;
+    justify-content: flex-start;
+    align-items:     stretch;
+
+    /* 通常の pad-top のみ使用（区切り線・ヘッダー込み） */
+    padding-top: var(--pad-top);
+}
+
+/* H1: ページ上から約1/3の位置に中央揃えで配置
+ *   1123px × 1/3 ≈ 374px。pad-top(52px)を引いた値を margin-top に設定。
+ *   フォントサイズ分(~15px)を差し引いて視覚的に1/3に見えるよう微調整。 */
+section.title h1 {
+    /* サイズ・ウェイト: 通常 H1 と同じ 11pt 太字 */
+    font-size:   11pt;
+    font-weight: 700;
+    line-height: 1.4;
+
+    /* 中央揃え */
+    text-align: center;
+    align-self: center;
+    width:      80%;    /* 線が端まで伸びすぎないよう制限 */
+
+    /* 色・下線（通常 H1 と同スタイル） */
+    color:          var(--color-main-dark);
+    border-bottom:  3px solid var(--color-main);
+    padding-bottom: 8px;
+
+    /* 上から約1/3の位置に押し下げる */
+    margin-top:    calc(1123px * 0.33 - var(--pad-top) - 15px);
+    margin-bottom: 10px;
+
+    /* 通常 H1 のスタイルをリセット */
+    letter-spacing: 0.02em;
+}
+
+/* H2: サブタイトル
+ *   通常ウェイト（H1=Bold との対比で区別）・中央揃え
+ *   通常 H2 のボーダー・背景はリセット */
+section.title h2 {
+    font-size:   11pt;
+    font-weight: 400;           /* ← 通常ウェイト（Bold なし） */
+    line-height: 1.5;
+    color:       var(--color-text-sub);
+
+    /* 中央揃え */
+    text-align: center;
+    align-self: center;
+    width:      80%;
+
+    /* 通常 H2 の装飾をリセット */
+    border-left:  none;
+    background:   none;
+    padding-left: 0;
+
+    margin-top:    6px;
+    margin-bottom: 0;
+}
+
+/* p: 右揃え・右下に積み上げ
+ *
+ *   先頭の p に margin-top: auto を付与することで、
+ *   flex コンテナ内の残余スペースをすべて吸収し、
+ *   p 要素群をまとめて最下部に押し込む。
+ *   複数の p があれば下から順に積まれ、最終行が右下になる。 */
+section.title p {
+    font-size:   10pt;
+    line-height: 1.7;
+    color:       var(--color-text-sub);
+    text-align:  right;
+    margin:      1px 0;
+    align-self:  stretch;
+}
+
+/* 最初の p が余白を吸収して全 p 群を底部へ押し込む */
+section.title p:first-of-type {
+    margin-top: auto;
+}
+
+/* hr: タイトルブロックとメタ情報の区切り線として使用可 */
+section.title hr {
+    margin: 16px 0;
+}
+
+/* メタ情報をテーブルで書きたい場合（任意） */
+section.title table {
+    font-size:  9.5pt;
+    margin-top: auto;   /* テーブルも下部に押し込む */
+    margin-left: auto;  /* 右揃え */
+    width:      auto;
+}
+
+section.title table th,
+section.title table td {
+    background: transparent;
+    border:     1px solid var(--color-border);
+    padding:    3px 10px;
+    text-align: right;
+}
+
+
+/* =================================================================
+ * 17. ヘッダー非表示クラス (_class: no-header)
+ *     図表メインのページ等で区切り線・ヘッダーを非表示にする
+ * ================================================================= */
+section.no-header::before {
+    display: none;
+}
+
+section.no-header header {
+    display: none;
+}
+
+section.no-header {
+    padding-top: calc(var(--pad-top) - 18px);
+}
+
+
+/* =================================================================
+ * 18. 文字サイズ補助クラス（formal.css の section.small を踏襲）
+ * ================================================================= */
+
+/* 詳細情報を詰め込む場合（formal.css の small クラス相当） */
+section.small {
+    font-size: 9pt;
+}
+
+section.small > *:not(h1, h2, h3, h4, header, footer) {
+    margin-top:    6px;
+    margin-bottom: 6px;
+}
+
+/* フォントサイズユーティリティ */
+section .fs-small  { font-size: 8.5pt; }
+section .fs-xsmall { font-size: 8pt;   }
+section .fs-large  { font-size: 11pt;  }
+
+
+/* =================================================================
+ * 19. 配置ユーティリティ
+ * ================================================================= */
+section .center { text-align: center; }
+section .right  { text-align: right;  }
+section .muted  { color: var(--color-text-sub); }
+
+
+/* =================================================================
+ * 20. 反転クラス (_class: invert)
+ *     formal.css の section.invert を踏襲
+ * ================================================================= */
+section.invert {
+    background-color: var(--color-text);
+    color:            var(--color-bg);
+}
+
+section.invert h1,
+section.invert h2,
+section.invert h3,
+section.invert h4,
+section.invert p,
+section.invert li,
+section.invert table {
+    color: var(--color-bg);
+}
+
+section.invert h2,
+section.invert h3,
+section.invert h4 {
+    color: #e0e0e0;
+}
+
+section.invert header,
+section.invert footer {
+    /* invert + tlp-clear の場合のフォールバック */
+    color: var(--color-bg);
+}
+
+section.invert::after {
+    color: var(--color-bg);
+}
+
+section.invert blockquote {
+    background: rgba(255, 255, 255, 0.08);
+    color:      #cccccc;
+}
+
+section.invert td,
+section.invert th {
+    border-color: #555555;
+}
+
+section.invert th {
+    background-color: rgba(0, 128, 128, 0.3);
+}
+
+/* EOF */
