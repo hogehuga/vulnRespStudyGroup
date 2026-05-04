@@ -61,6 +61,25 @@ section.small > *:not(h1, header, footer, .pagination) {
     margin-bottom: 8px;
 }
 
+/* H2: smallモードでは本文と同サイズにし、色と下線で見出しを表現 */
+section.small h2 {
+    font-size: 40px;
+    color: var(--color-main);
+    border-bottom: 2px solid var(--color-main);
+    padding-bottom: 2px;
+    margin-bottom: 0px;
+}
+
+/* H3: smallモードでは少し小さく */
+section.small h3 {
+    font-size: 40px;
+}
+
+/* li: smallモードでは行間を詰める */
+section.small li {
+    margin-bottom: 4px;
+}
+
 
 /* =========================================
    3. ロゴ & TLP画像 (最前面配置)
