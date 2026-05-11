@@ -9,80 +9,76 @@
     /* --- 色設定 --- */
     --color-main: teal;                /* メインカラー（線やヘッダー） */
     --color-text: rgb(71, 71, 71);     /* 通常の文字色 */
-    --color-text-sub: gray;            /* サブカラー（H2, H3など） */
-    
-    /* 背景色: 真っ白ではなく、柔らかいクリーム色に変更 */
+    --color-text-sub: gray;            /* サブカラー */
+
+    /* 背景色: 真っ白ではなく、柔らかいクリーム色 */
     --color-bg: rgb(247, 243, 238);
 
     /* --- ロゴ初期値 --- */
     --logo-image: none;
 
-    /* --- TLP画像URL定義 --- */
-    --tlp-url-white: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-WHITE.png');
-    --tlp-url-green: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-GREEN.png');
-    --tlp-url-amber: url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-AMBER.png');
-    --tlp-url-red:   url('https://raw.githubusercontent.com/hogehuga/vulnRespStudyGroup/refs/heads/master/marp-themes/TLP-RED.png');
+    /* --- TLP画像定義 (SVG data URL, TLP 2.0準拠) ---
+     *   外部URL参照を廃し、SVGをCSSに直接埋め込む。
+     *   背景: #000000、テキスト: 各TLPカラー。
+     *   class指定: <!-- _class: tlp-green --> のように使う。
+     *   デフォルトは非表示 (--tlp-image: none)。              */
+    --tlp-url-clear: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'><rect width='160' height='40' fill='black'/><text x='80' y='30' font-family='Arial,Helvetica,sans-serif' font-size='26' font-weight='bold' text-anchor='middle' fill='white'>TLP:CLEAR</text></svg>");
+    --tlp-url-green: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'><rect width='160' height='40' fill='black'/><text x='80' y='30' font-family='Arial,Helvetica,sans-serif' font-size='26' font-weight='bold' text-anchor='middle' fill='%2333FF00'>TLP:GREEN</text></svg>");
+    --tlp-url-amber: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'><rect width='160' height='40' fill='black'/><text x='80' y='30' font-family='Arial,Helvetica,sans-serif' font-size='26' font-weight='bold' text-anchor='middle' fill='%23FFC000'>TLP:AMBER</text></svg>");
+    --tlp-url-red:   url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 40'><rect width='160' height='40' fill='black'/><text x='80' y='30' font-family='Arial,Helvetica,sans-serif' font-size='26' font-weight='bold' text-anchor='middle' fill='%23FF2B2B'>TLP:RED</text></svg>");
+
+    /* アクティブTLP（クラスで上書き）。デフォルト: 非表示 */
+    --tlp-image: none;
 }
 
 /* =========================================
    2. ベースレイアウト (section)
+   =========================================
+   旧 section.small (40px) をデフォルトに昇格。
+   情報密度を優先する構成を標準とする。
    ========================================= */
 section {
     width: 1920px;
     height: 1080px;
-    
-    /* 基本文字サイズ (デフォルト) */
-    font-size: 45px;
-    
+
+    /* 基本文字サイズ: 旧 small (40px) をデフォルト化 */
+    font-size: 40px;
+
     color: var(--color-text);
     background-color: var(--color-bg);
-    
+
     /* 余白設定: 上70px, 左右80px, 下80px */
     padding: 70px 80px 80px 80px;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    position: relative; 
-
-    /* TLP初期値 */
-    --tlp-current: var(--tlp-url-green);
+    position: relative;
 }
 
-/* --- 文字サイズ縮小モード (class: small) --- */
-/* 詳細情報を詰め込む場合に使用 (40px) */
-section.small {
-    font-size: 40px;
-}
-/* smallモード時の要素間隔微調整 */
-section.small > *:not(h1, header, footer, .pagination) {
+/* コンテンツ要素の間隔（旧 section.small > * から昇格） */
+section > *:not(h1, h2, h3, header, footer, .pagination) {
+    width: 100%;
+    text-align: left;
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
-/* H2: smallモードでは本文と同サイズにし、色と下線で見出しを表現 */
-section.small h2 {
+/* --- 文字サイズ縮小モード (class: small) ---
+ *   後方互換のため残す。現在はデフォルトと同一サイズ。
+ *   将来的により小さいサイズに変更する場合はここを調整する。 */
+section.small {
     font-size: 40px;
-    color: var(--color-main);
-    border-bottom: 2px solid var(--color-main);
-    padding-bottom: 2px;
-    margin-bottom: 0px;
-}
-
-/* H3: smallモードでは少し小さく */
-section.small h3 {
-    font-size: 40px;
-}
-
-/* li: smallモードでは行間を詰める */
-section.small li {
-    margin-bottom: 4px;
 }
 
 
 /* =========================================
    3. ロゴ & TLP画像 (最前面配置)
+   =========================================
+   TLP画像: 左上 (--tlp-image で切り替え, SVG data URL)
+   ロゴ画像: 右上 (--logo-image で設定)
+   z-index: 103 でヘッダー(100)より前面に配置。
    ========================================= */
 section::before {
     content: "";
@@ -94,74 +90,84 @@ section::before {
     pointer-events: none;
     z-index: 103;
 
-    background-image: var(--tlp-current), var(--logo-image);
-    
-    /* TLP(左上), ロゴ(右上: 右20px, 上10px) */
+    background-image: var(--tlp-image), var(--logo-image);
+
+    /* TLP(左上), ロゴ(右上) */
     background-position: left 0 top 0, right 20px top 10px;
-    
-    /* サイズ: TLP 160px, ロゴ 12% */
+
+    /* TLP 160px固定, ロゴ 12% */
     background-size: 160px auto, 12%;
-    
+
     background-repeat: no-repeat, no-repeat;
 }
 
-/* TLP切り替えクラス */
-section.tlp-white { --tlp-current: var(--tlp-url-white); }
-section.tlp-green { --tlp-current: var(--tlp-url-green); }
-section.tlp-amber { --tlp-current: var(--tlp-url-amber); }
-section.tlp-red   { --tlp-current: var(--tlp-url-red); }
-section.tlp-none  { --tlp-current: none; }
+/* =========================================
+   4. TLP切り替えクラス (TLP 2.0)
+   =========================================
+   使い方: <!-- _class: tlp-green -->
+           スライド全体に適用する場合は <!-- class: tlp-green -->
+   色定義: https://www.first.org/tlp/
+   ========================================= */
+section.tlp-none  { --tlp-image: none; }
+section.tlp-clear { --tlp-image: var(--tlp-url-clear); }
+section.tlp-green { --tlp-image: var(--tlp-url-green); }
+section.tlp-amber { --tlp-image: var(--tlp-url-amber); }
+section.tlp-red   { --tlp-image: var(--tlp-url-red);   }
 
 
 /* =========================================
-   4. 見出し (H1, H2, H3) デザイン
+   5. 見出し (H1, H2, H3) デザイン
    ========================================= */
-/* H1: スライドタイトル */
+
+/* H1: スライドタイトル
+ *   80px → 70px に縮小し、最終行の切れを低減する。 */
 section h1 {
-    font-size: 80px;
+    font-size: 70px;
     text-align: left;
     width: 100%;
-    
+
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding-bottom: 10px;
-    
+
     border-bottom: 5px solid var(--color-main);
 }
 
-/* H2: コンテンツ内の大見出し (60px) */
+/* H2: コンテンツ内の大見出し
+ *   旧 section.small h2 のスタイルをデフォルトに昇格。
+ *   フォントサイズは本文と揃え、色と下線で見出しを表現する。 */
 section h2 {
-    font-size: 60px;
-    color: var(--color-text-sub);
+    font-size: 40px;
+    color: var(--color-main);
+    border-bottom: 2px solid var(--color-main);
+    padding-bottom: 2px;
     text-align: left;
     width: 100%;
-    
-    margin-top: 30px;
-    margin-bottom: 15px;
+
+    margin-top: 0.6em;
+    margin-bottom: 0;
 }
 
-/* H3: コンテンツ内の中見出し (55px) */
+/* H3: コンテンツ内の中見出し */
 section h3 {
-    font-size: 55px;
+    font-size: 40px;
     color: var(--color-text-sub);
     text-align: left;
     width: 100%;
-    
-    margin-top: 20px;
-    margin-bottom: 10px;
+
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+/* リスト行間 */
+section li {
+    margin-bottom: 4px;
 }
 
 
 /* =========================================
-   5. 本文・コンテンツエリア
+   6. 本文・コンテンツエリア
    ========================================= */
-section > *:not(h1, h2, h3, header, footer, .pagination) {
-    width: 100%;
-    text-align: left;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 section ul, section ol {
     margin-left: 1em;
 }
@@ -171,12 +177,14 @@ section table {
     margin-right: auto;
     font-size: 0.8em;
 }
+
 section table th, section table td {
     padding: 0.2em 0.5em;
 }
 
+
 /* =========================================
-   6. ヘッダー・フッター
+   7. ヘッダー・フッター
    ========================================= */
 section header, section footer {
     position: absolute;
@@ -203,8 +211,9 @@ section::after {
     z-index: 101;
 }
 
+
 /* =========================================
-   7. タイトルスライド (class: title)
+   8. タイトルスライド (class: title)
    ========================================= */
 section.title {
     display: flex;
@@ -213,7 +222,6 @@ section.title {
     align-items: center;
     text-align: center;
 
-    /* 下余白を大きく取り、視覚的に中央より少し上にする */
     padding: 0 50px 200px 50px;
 }
 
@@ -221,15 +229,17 @@ section.title {
 section.title h1 {
     font-size: 100px;
     text-align: center;
-    width: 80%; /* 線が長すぎないよう調整 */
-    
+    width: 80%;
+
     margin-top: 0;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 5px solid var(--color-main);
 }
 
-/* サブタイトル (H2) */
+/* サブタイトル (H2)
+ *   タイトルページでは通常のh2装飾（teal色・下線）をリセットし、
+ *   中央揃え・通常ウェイトの副題スタイルに変更する。 */
 section.title h2 {
     font-size: 60px;
     text-align: center;
@@ -237,6 +247,10 @@ section.title h2 {
     width: 80%;
     margin-top: 0;
     font-weight: normal;
+
+    /* section h2 の装飾をリセット */
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 /* 発表者情報 (本文 pタグ) - 右下固定 */
@@ -244,7 +258,7 @@ section.title p {
     position: absolute;
     bottom: 60px;
     right: 80px;
-    
+
     text-align: right;
     font-size: 36px;
     color: var(--color-text);
@@ -253,18 +267,19 @@ section.title p {
     margin: 0;
 }
 
+
 /* =========================================
-   8. セクション区切り (class: lead)
+   9. セクション区切り (class: lead)
    ========================================= */
 section.lead {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* 上詰め固定 */
-    
-    padding-top: 380px; /* H1開始位置固定 */
+    justify-content: flex-start;
+
+    padding-top: 380px;
     padding-left: 80px;
     padding-right: 80px;
-    
+
     text-align: left;
     position: relative;
 }
@@ -273,15 +288,17 @@ section.lead {
 section.lead h1 {
     font-size: 90px;
     text-align: left;
-    width: 100%; /* 下線を画面いっぱい引く */
-    
+    width: 100%;
+
     margin-top: 0;
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 5px solid var(--color-main);
 }
 
-/* 説明文 (H2) */
+/* 説明文 (H2)
+ *   leadページでは通常のh2装飾（teal色・下線）をリセットし、
+ *   シンプルなサブテキストとして表示する。 */
 section.lead h2 {
     font-size: 45px;
     color: var(--color-text);
@@ -290,6 +307,10 @@ section.lead h2 {
     width: 100%;
     text-align: left;
     margin-top: 0;
+
+    /* section h2 の装飾をリセット */
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 /* 所要時間 (H3) - 左上ヘッダー下固定 */
@@ -297,7 +318,7 @@ section.lead h3 {
     position: absolute;
     top: 70px;
     left: 40px;
-    
+
     font-size: 40px;
     color: var(--color-text-sub);
     font-weight: normal;
@@ -309,13 +330,13 @@ section.lead ul {
     position: absolute;
     bottom: 100px;
     right: 40px;
-    width: 30%; /* 幅を制限 */
-    
+    width: 30%;
+
     font-size: 35px;
     color: var(--color-text-sub);
     line-height: 1.4;
     text-align: left;
-    list-style-type: disc; /* 箇条書き記号あり */
+    list-style-type: disc;
     margin: 0;
     padding-left: 40px;
 }
@@ -329,18 +350,15 @@ section.lead ul strong {
     display: inline-block;
 }
 
+
 /* =========================================
-   9. 反転カラー (class: invert)
+   10. 反転カラー (class: invert)
    ========================================= */
 section.invert {
-    /* 背景をダークグレーに */
     background-color: var(--color-text);
-    
-    /* 文字色を「通常時の背景色(クリーム)」に変更 */
     color: var(--color-bg);
 }
 
-/* 各要素の文字色強制変更 */
 section.invert h1,
 section.invert h2,
 section.invert h3,
@@ -350,20 +368,17 @@ section.invert table {
     color: var(--color-bg);
 }
 
-/* サブカラーも白系に（少し差をつけるため明度を下げる） */
 section.invert h2,
 section.invert h3 {
     color: #e0e0e0;
 }
 
-/* ヘッダー・フッターのグラデーション調整（右側を背景色に溶け込ませる） */
 section.invert header,
 section.invert footer {
     background: linear-gradient(to right, var(--color-main), var(--color-text));
     color: white;
 }
 
-/* ページ番号 */
 section.invert::after {
     color: var(--color-bg);
 }
