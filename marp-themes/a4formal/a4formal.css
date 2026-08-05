@@ -1,0 +1,380 @@
+/* @theme a4formal */
+/* a4formal 0.3.0 - 2026-08-05 */
+
+@import 'default';
+
+/* =========================================
+   1. Settings
+   ========================================= */
+:root {
+    --color-main: teal;
+    --color-text: rgb(71, 71, 71);
+    --color-text-sub: gray;
+    --color-bg: rgb(247, 243, 238);
+    --color-rule: rgb(190, 190, 190);
+}
+
+/* =========================================
+   2. A4 portrait page
+   ========================================= */
+section {
+    width: 210mm;
+    height: 297mm;
+    box-sizing: border-box;
+    padding: 17mm 18mm 16mm;
+
+    font-family: "Noto Sans JP", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+}
+
+section > *:not(h1, h2, h3, header, footer, .pagination) {
+    width: 100%;
+    text-align: left;
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+}
+
+/* Optional high-density page. Layout and margins remain unchanged. */
+section.small {
+    font-size: 9pt;
+    line-height: 1.45;
+}
+
+section.small h1 { font-size: 18.5pt; }
+section.small h2 { font-size: 13pt; }
+section.small h3 { font-size: 10.5pt; }
+section.small table { font-size: 8pt; }
+
+/* =========================================
+   3. TLP
+   ========================================= */
+
+/* =========================================
+   4. Headings and body content
+   ========================================= */
+section h1 {
+    width: 100%;
+    margin: 2mm 0 5mm;
+    padding-bottom: 2.5mm;
+    border-bottom: 1.2mm solid var(--color-main);
+    font-size: 20pt;
+    line-height: 1.3;
+    text-align: left;
+}
+
+section h2 {
+    width: 100%;
+    margin: 4mm 0 1mm;
+    padding-bottom: 0.8mm;
+    border-bottom: 0.35mm solid var(--color-main);
+    font-size: 14pt;
+    line-height: 1.4;
+    color: var(--color-main);
+    text-align: left;
+}
+
+section h3 {
+    width: 100%;
+    margin: 3mm 0 0.5mm;
+    font-size: 11.5pt;
+    line-height: 1.4;
+    color: var(--color-text-sub);
+    text-align: left;
+}
+
+section p { text-align: justify; }
+
+section ul,
+section ol {
+    margin-left: 1.2em;
+    padding-left: 1.1em;
+}
+
+section li { margin-bottom: 0.2em; }
+
+section blockquote {
+    margin: 2mm 0;
+    padding: 2mm 4mm;
+    border-left: 1.2mm solid var(--color-main);
+    background: rgba(0, 128, 128, 0.07);
+}
+
+section code {
+    font-family: "Cascadia Mono", "Consolas", "Noto Sans Mono CJK JP", monospace;
+    font-size: 0.9em;
+}
+
+section pre {
+    padding: 3mm;
+    border: 0.25mm solid var(--color-rule);
+    border-radius: 1.5mm;
+    font-size: 8.5pt;
+    line-height: 1.4;
+}
+
+section table {
+    margin: 2mm auto;
+    border-collapse: collapse;
+    font-size: 9pt;
+    line-height: 1.4;
+}
+
+section table th,
+section table td {
+    padding: 1.4mm 2mm;
+    border: 0.25mm solid var(--color-rule);
+}
+
+section table th {
+    background: rgba(0, 128, 128, 0.12);
+    color: var(--color-text);
+}
+
+section img { max-height: 205mm; }
+
+/* Compact source/date line for one-page reports.
+   Put a blockquote immediately after h1 on a compact-meta page. */
+section.compact-meta > h1 + blockquote {
+    display: flex;
+    align-items: center;
+    min-height: 8mm;
+    margin: -2mm 0 2mm;
+    padding: 1.2mm 3mm;
+    border-left-width: 0.8mm;
+    font-size: 8.5pt;
+    line-height: 1.35;
+}
+
+section.compact-meta > h1 + blockquote p {
+    margin: 0;
+    text-align: left;
+}
+
+/* =========================================
+   5. Header, footer, and pagination
+   ========================================= */
+section header,
+section footer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.3mm 18mm;
+    background: linear-gradient(to right, var(--color-main), white);
+    color: black;
+    text-align: center;
+    font-size: 7.5pt;
+    line-height: 1.25;
+    z-index: 100;
+}
+
+section header { top: 0; }
+section footer { bottom: 0; }
+
+/* TLP is generated on the real header element. This avoids section
+   pseudo-elements and background images, both of which Marp may rewrite. */
+section header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    min-width: 28mm;
+    padding: 1.3mm 2.5mm;
+    box-sizing: border-box;
+    background: #000000;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5pt;
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: center;
+}
+
+/* Write the generated text directly in each rule. Some Marp/Chromium export
+   combinations do not resolve custom properties inside `content`. */
+section.tlp-clear header::before {
+    content: "TLP:CLEAR";
+    display: block;
+    color: #ffffff;
+}
+
+section.tlp-green header::before {
+    content: "TLP:GREEN";
+    display: block;
+    color: #33ff00;
+}
+
+section.tlp-amber header::before {
+    content: "TLP:AMBER";
+    display: block;
+    color: #ffc000;
+}
+
+section.tlp-red header::before {
+    content: "TLP:RED";
+    display: block;
+    color: #ff2b2b;
+}
+
+section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    position: absolute;
+    right: 8mm;
+    bottom: 2.2mm;
+    z-index: 101;
+    font-size: 8pt;
+    line-height: 1;
+    color: var(--color-text);
+}
+
+/* =========================================
+   6. Title page (class: title)
+   ========================================= */
+section.title {
+    justify-content: center;
+    align-items: center;
+    padding: 20mm 18mm 48mm;
+    text-align: center;
+}
+
+section.title h1 {
+    width: 88%;
+    margin: 0 0 6mm;
+    padding-bottom: 5mm;
+    border-bottom: 1.2mm solid var(--color-main);
+    font-size: 28pt;
+    line-height: 1.35;
+    text-align: center;
+}
+
+section.title h2 {
+    width: 88%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 16pt;
+    font-weight: normal;
+    color: var(--color-text-sub);
+    text-align: center;
+}
+
+section.title p {
+    position: absolute;
+    right: 18mm;
+    bottom: 20mm;
+    width: auto;
+    margin: 0;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    text-align: right;
+}
+
+/* =========================================
+   7. Chapter opener / summary (class: lead)
+   ========================================= */
+section.lead {
+    justify-content: flex-start;
+    padding: 54mm 18mm 20mm;
+    text-align: left;
+}
+
+section.lead h1 {
+    margin: 0 0 6mm;
+    padding-bottom: 4mm;
+    font-size: 26pt;
+    border-bottom: 1.2mm solid var(--color-main);
+}
+
+section.lead h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 14pt;
+    font-weight: normal;
+    line-height: 1.55;
+    color: var(--color-text);
+}
+
+section.lead h3 {
+    position: absolute;
+    top: 18mm;
+    left: 18mm;
+    margin: 0;
+    font-size: 10pt;
+    font-weight: normal;
+    color: var(--color-text-sub);
+}
+
+section.lead > ul,
+section.lead > ol {
+    position: absolute;
+    right: 18mm;
+    bottom: 24mm;
+    width: 56%;
+    margin: 0;
+    padding-left: 1.4em;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: var(--color-text-sub);
+}
+
+/* Keep nested lists in normal flow. Markdown such as "- 2. Item" may be
+   parsed as an ordered list nested in an unordered list. */
+section.lead > ul ul,
+section.lead > ul ol,
+section.lead > ol ul,
+section.lead > ol ol {
+    position: static;
+    width: auto;
+    margin: 0;
+    padding-left: 1.4em;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+section.lead li strong {
+    color: var(--color-main);
+    font-weight: bold;
+}
+
+/* =========================================
+   8. Inverted page (class: invert)
+   ========================================= */
+section.invert {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+section.invert h1,
+section.invert h2,
+section.invert h3,
+section.invert p,
+section.invert li,
+section.invert table {
+    color: var(--color-bg);
+}
+
+section.invert h2,
+section.invert h3 { color: #e0e0e0; }
+
+section.invert table th { background: rgba(255, 255, 255, 0.12); }
+
+section.invert blockquote { background: rgba(255, 255, 255, 0.08); }
+
+section.invert header,
+section.invert footer {
+    background: linear-gradient(to right, var(--color-main), var(--color-text));
+    color: white;
+}
+
+section.invert::after { color: var(--color-bg); }
